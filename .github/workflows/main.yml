@@ -1,4 +1,4 @@
-name: Publish abimongo_utils to npm
+name: abimongo_utils
 
 on:
   push:
@@ -34,9 +34,30 @@ jobs:
 
       - name: Build package
         run: npm run build
+      
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: abimongo_core-build-${{ github.run_number }}-${{ github.sha }}
+          path: |
+            ./dist
+            ./package.json
+            ./README.md
+            ./LICENSE
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Configure Git
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com" 
+          git config --global user.name "$(gh api /users/${GITHUB_ACTOR} | jq .name -r)"
+          git config -l
 
       - name: Publish to npm
         if: startsWith(github.ref, 'refs/tags/v')
-        run: npm publish --access public
+        run: npm publish 
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
