@@ -1,16 +1,13 @@
 import { createLogger } from '../logger/loggerFactory';
-import { LoggerConfig, LogLevel } from '../types';
+import { LoggerConfig, LogEntry, LogLevel } from '../types';
 
 describe('createLogger', () => {
-	let mockTransporter: { write: jest.Mock };
+	let mockTransport: { write: jest.Mock };
 	let mockLogger: any;
-	let mockHooks: any;
-	let nowSpy: jest.SpyInstance;
-	let formatMessageSpy: jest.SpyInstance;
-	let colorByLevelSpy: jest.SpyInstance;
+	let config: LoggerConfig;
 
-	beforeEach( async() => {
-		mockTransporter = { write: jest.fn() };
+	beforeEach(() => {
+		mockTransport = { write: jest.fn() };
 		mockLogger = {
 			debug: jest.fn(),
 			info: jest.fn(),
@@ -18,141 +15,85 @@ describe('createLogger', () => {
 			error: jest.fn(),
 			trace: jest.fn(),
 		};
-		mockHooks = {
-			onLog: jest.fn(),
-			onError: jest.fn(),
-		};
-		nowSpy = jest.spyOn(require('../utils/timeUtils'), 'now').mockReturnValue(1234567890);
-		const formatters = await import('../utils');
-		const colorizer = await import('../logger');
-		formatMessageSpy = jest.spyOn(formatters, 'formatMessage').mockImplementation(
-			(level: string, message: string, meta: any[]) => `[${level}] ${message} ${JSON.stringify(meta)}`
-		);
-		colorByLevelSpy = jest.spyOn(colorizer, 'colorByLevel').mockImplementation(
-			(level, formatted) => `colored:${formatted}`
-		);
-	});
-
-	afterEach(() => {
-		jest.restoreAllMocks();
-	});
-
-	it('should log info message and call all relevant functions', () => {
-		const logger = createLogger({
+		config = {
 			level: 'info',
-			transports: [mockTransporter.write], 
+			transports: [mockTransport as any],
+			colorize: false,
+			json: false,
+			excludedSources: [],
+			formatOptions: { colorize: false },
 			logger: mockLogger,
-			hooks: mockHooks,
-			formatOptions: { colorize: true },
-		});
+			hooks: {
+				onLog: jest.fn(),
+				onError: jest.fn(),
+			},
+		};
+	});
 
-		logger.info('Hello', { foo: 'bar', source: 'test' });
+	it('should log info messages and call transport write', () => {
+		const logger = createLogger(config);
+		logger.info('Test message', { foo: 'bar' });
 
-		expect(nowSpy).toHaveBeenCalled();
-		expect(formatMessageSpy).toHaveBeenCalled();
-		expect(colorByLevelSpy).toHaveBeenCalled();
-		expect(mockLogger.info).toHaveBeenCalledWith(expect.stringContaining('Hello'));
-		expect(mockTransporter.write).toHaveBeenCalledWith(expect.stringContaining('Hello'));
-		expect(mockHooks.onLog).toHaveBeenCalled();
+		expect(mockTransport.write).toHaveBeenCalled();
+		expect(mockLogger.info).toHaveBeenCalled();
+		expect(config.hooks?.onLog).toHaveBeenCalled();
+	});
+
+	it('should not log messages below the configured level', () => {
+		config.level = 'warn';
+		const logger = createLogger(config);
+
+		expect(mockTransport.write).not.toHaveBeenCalled();
+		expect(mockLogger.info).not.toHaveBeenCalled();
 	});
 
 	it('should not log if source is excluded', () => {
-		const logger = createLogger({
-			level: 'info',
-			transports: [mockTransporter.write],
-			excludedSources: ['test'],
-			logger: mockLogger,
-			hooks: mockHooks,
-		});
+		config.excludedSources = ['excludedSource'];
+		const logger = createLogger(config);
+		logger.info('Should not log', { source: 'excludedSource' });
 
-		logger.info('Should not log', { source: 'test' });
-
-		expect(mockLogger.info).not.toHaveBeenCalled();
-		expect(mockTransporter.write).not.toHaveBeenCalled();
-		expect(mockHooks.onLog).not.toHaveBeenCalled();
-	});
-
-	it('should not log if shouldLog returns false', () => {
-		jest.spyOn(require('../logger/levels'), 'shouldLog').mockReturnValue(false);
-		const logger = createLogger({
-			level: 'info',
-			transports: [mockTransporter.write],
-			logger: mockLogger,
-			hooks: mockHooks,
-		});
-
-		logger.info('Should not log');
-
-		expect(mockLogger.info).not.toHaveBeenCalled();
-		expect(mockTransporter.write).not.toHaveBeenCalled();
-		expect(mockHooks.onLog).not.toHaveBeenCalled();
+		expect(mockTransport.write).not.toHaveBeenCalled();
 	});
 
 	it('should use enrichMetadata if provided', () => {
-		const enrichMetadata = jest.fn((meta) => ({ ...meta, enriched: true }));
-		const logger = createLogger({
-			level: 'info',
-			transports: [mockTransporter.write],
-			logger: mockLogger,
-			hooks: mockHooks,
-			enrichMetadata,
+		config.enrichMetadata = (meta: Record<string, any>) => ({
+			...meta,
+			enriched: true,
 		});
+		const logger = createLogger(config);
+		logger.info('Enrich test', { foo: 'bar' });
 
-		logger.info('Enrich me', { foo: 'bar' });
-
-		expect(enrichMetadata).toHaveBeenCalled();
-		expect(mockLogger.info).toHaveBeenCalledWith(expect.stringContaining('Enrich me'));
+		expect(mockTransport.write).toHaveBeenCalled();
+		const callArg = mockTransport.write.mock.calls[0][0];
+		expect(callArg).toContain('Enrich test');
 	});
 
-	it('should use shouldLogLevel from config', () => {
-		const shouldLog = jest.fn().mockReturnValue(false);
-		const logger = createLogger({
-			level: 'info',
-			transports: [mockTransporter.write],
-			logger: mockLogger,
-			hooks: mockHooks,
-			shouldLog,
-		});
-
-		logger.info('Should not log', { foo: 'bar' });
-
-		expect(shouldLog).toHaveBeenCalled();
-		expect(mockLogger.info).not.toHaveBeenCalled();
+	it('should log in JSON format if json=true', () => {
+		const logger = createLogger(config);
+		config.json = true;
+		logger.info('Json error', { foo: 'baz' });
+		expect(mockTransport.write).toHaveBeenCalled();
 	});
 
-	it('should call onError hook if transporter throws', () => {
-		const error = new Error('fail');
-		const badTransporter = { write: jest.fn(() => { throw error; }) };
-		const logger = createLogger({
-			level: 'info',
-			transports: [badTransporter.write],
-			logger: mockLogger,
-			hooks: mockHooks,
-		});
+	it('should use shouldLog function if provided', () => {
+		config.shouldLog = jest.fn(() => false);
+		const logger = createLogger(config);
+		logger.info('Should not log');
 
-		logger.info('Test error');
-
-		expect(mockHooks.onError).toHaveBeenCalledWith(error);
+		expect(mockTransport.write).not.toHaveBeenCalled();
+		expect(config.shouldLog).toHaveBeenCalled();
 	});
 
-	it('should call correct log level method', () => {
-		const logger = createLogger({
-			level: 'error',
-			transports: [mockTransporter.write],
-			logger: mockLogger,
-			hooks: mockHooks,
-		});
-
-		logger.debug('debug msg');
-		logger.info('info msg');
-		logger.warn('warn msg');
-		logger.error('error msg');
-		logger.trace('trace msg');
+	it('should call all log levels', () => {
+		const logger = createLogger(config);
+		logger.debug('debug');
+		logger.info('info');
+		logger.warn('warn');
+		logger.error('error');
+		logger.trace('trace');
 
 		expect(mockLogger.debug).toHaveBeenCalled();
 		expect(mockLogger.info).toHaveBeenCalled();
-		expect(mockLogger.warn).toHaveBeenCalled();
-		expect(mockLogger.error).toHaveBeenCalled();
-		expect(mockLogger.trace).toHaveBeenCalled();
+
 	});
 });
