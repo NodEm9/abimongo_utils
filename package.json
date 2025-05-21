@@ -18,7 +18,9 @@
     "test:watch": "tsc --noEmit && jest --watch",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "docs": "typedoc --out docs src/index.ts"
+    "docs": "typedoc --out docs src/index.ts",
+    "publish": "npm publish --access public",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "abimong_utils",
