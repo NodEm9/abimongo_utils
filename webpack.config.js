@@ -48,7 +48,6 @@ module.exports = {
 		"mangleExports": "size",
 	},
 	plugins: [
-		...plugins,
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify('production'),
 			// 'process.env.VERSION': JSON.stringify('1.0.0'),
