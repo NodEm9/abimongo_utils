@@ -53,8 +53,12 @@ jobs:
           if-no-files-found: error
           retention-days: 14
 
-      - name: Publish to npm
-        if: github.ref, 'refs/heads/main'
-        run: npm publish 
+      - name: Clear Npm Cache 
+        run: |
+          npm cache clean --force
+      - name: Publish to npm (Only on Main)
+        if: github.ref == 'refs/heads/main'
+        run: |
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
