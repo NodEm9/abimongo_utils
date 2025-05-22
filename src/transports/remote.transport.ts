@@ -1,10 +1,9 @@
-import { LogEntry } from "types";
 import axios from 'axios';
 import { createCircuitBreaker, retryWithBackoff } from "../utils";
 import { RemoteTransporter } from "types";
 
 
-export function createHttpTransport(url: string): RemoteTransporter {
+export const createHttpTransport = (url: string): RemoteTransporter => {
 	return async (message, meta) => {
 		await axios.post(url, {
 			timestamp: new Date().toISOString(),
@@ -15,7 +14,8 @@ export function createHttpTransport(url: string): RemoteTransporter {
 	};
 }
 
-export function createElasticTransport(url: string, index: string): RemoteTransporter {
+export const createElasticTransport =
+  (url: string, index: string): RemoteTransporter =>{
   return async (message, meta) => {
     await axios.post(`${url}/${index}/_doc`, {
       timestamp: new Date().toISOString(),
@@ -26,15 +26,20 @@ export function createElasticTransport(url: string, index: string): RemoteTransp
   };
 }
 
-export function createLokiTransport(pushUrl: string, labels: Record<string, string>): RemoteTransporter {
+export const createLokiTransport =
+  (
+    pushUrl: string,
+    labels: Record<string, string>
+  ): RemoteTransporter => {
   return async (message, meta) => {
     await axios.post(pushUrl, {
       streams: [
         {
           stream: labels,
-          values: [[`${Date.now()}000000`, message]]
+          values: [[`${Date.now()}000000`, message, meta.message]],
         }
-      ]
+      ],
+      level: meta.level,
     });
   };
 };
