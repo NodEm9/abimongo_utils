@@ -1,6 +1,6 @@
 {
   "name": "abimongo_utils",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "main": "dist/abimongo-utils.js",
   "typings": "dist/index.d.ts",
   "files": [
@@ -14,7 +14,7 @@
     "type": "git",
     "url": ""
   },
-    "exports": {
+  "exports": {
     ".": {
       "require": "./dist/abimongo-utils.js",
       "import": "./dist/abimongo-utils.js"
