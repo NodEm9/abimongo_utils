@@ -19,7 +19,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "docs": "typedoc --out docs src/index.ts",
-    "publish": "npm publish --access public",
+    "clean": "rimraf ./dist",
+    "prepare": "npm run clean && npm run build",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
