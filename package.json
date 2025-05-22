@@ -16,8 +16,6 @@
     "build:watch": "webpack --config webpack.config.js --watch",
     "test": "jest --detectOpenHandles --coverage",
     "test:watch": "tsc --noEmit && jest --watch",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
     "docs": "typedoc --out docs src/index.ts",
     "patch:version": "npm version patch",
     "prepublishOnly": "npm run build",
