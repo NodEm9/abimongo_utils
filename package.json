@@ -6,10 +6,20 @@
   "files": [
     "dist/"
   ],
+  "browser": {
+    "async_hooks": false
+  },
   "sideEffects": false,
   "repository": {
     "type": "git",
     "url": ""
+  },
+    "exports": {
+    ".": {
+      "require": "./dist/abimongo-utils.js",
+      "import": "./dist/abimongo-utils.js"
+    },
+    "./package.json": "./package.json"
   },
   "scripts": {
     "build": "webpack --config webpack.config.js",
