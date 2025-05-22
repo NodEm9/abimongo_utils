@@ -1,5 +1,4 @@
-import { createLogger } from './logger/loggerFactory';
-
+import { createLogger } from './logger';
 
 
 declare global {
