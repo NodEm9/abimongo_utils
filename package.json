@@ -1,10 +1,10 @@
 {
   "name": "abimongo_utils",
   "version": "0.0.3",
-  "main": "dist/abimongo_utils.js",
+  "main": "dist/abimongo-utils.js",
   "typings": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist/"
   ],
   "sideEffects": false,
   "repository": {
@@ -20,7 +20,7 @@
     "lint:fix": "eslint . --fix",
     "docs": "typedoc --out docs src/index.ts",
     "patch:version": "npm version patch",
-    "prepublishOnly": "npm run build && npm run patch:version",
+    "prepublishOnly": "npm run build",
     "publish": "npm publish"
   },
   "keywords": [
