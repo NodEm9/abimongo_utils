@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const path = require('path');
 const { TsconfigPathsPlugin } = require('tsconfig-paths-webpack-plugin');
 const { plugins } = require('../abimongo_core/webpack.node.config');
+const { VERSION } = require('ts-node');
 
 module.exports = {
 	mode: "production",
