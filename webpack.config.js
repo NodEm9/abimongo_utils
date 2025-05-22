@@ -31,7 +31,7 @@ module.exports = {
 	},
 	resolve: {
 		extensions: ['.js', '.ts'],
-			byDependency: {
+		byDependency: {
 			esm: {
 				mainFields: ['browser', 'module', 'main'],
 			},
@@ -53,5 +53,8 @@ module.exports = {
 			// 'process.env.VERSION': JSON.stringify('1.0.0'),
 			'process.env.TS_NODE': JSON.stringify(VERSION),
 		}),
+		new webpack.ProvidePlugin({
+			window: path.resolve(__dirname, 'shim/window.js')
+		})
 	],
 }
