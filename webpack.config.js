@@ -48,12 +48,12 @@ module.exports = {
 		"sideEffects": false,
 		"mangleExports": "size",
 	},
-	plugins: [
-		...plugins,
-		new webpack.DefinePlugin({
-			'process.env.NODE_ENV': JSON.stringify('production'),
-			// 'process.env.VERSION': JSON.stringify('1.0.0'),
-			// 'process.env.TS_NODE': JSON.stringify(VERSION),
-		}),
-	],
+	// plugins: [
+	// 	...plugins,
+	// 	new webpack.DefinePlugin({
+	// 		'process.env.NODE_ENV': JSON.stringify('production'),
+	// 		// 'process.env.VERSION': JSON.stringify('1.0.0'),
+	// 		// 'process.env.TS_NODE': JSON.stringify(VERSION),
+	// 	}),
+	// ],
 }
