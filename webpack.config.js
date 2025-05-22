@@ -45,7 +45,10 @@ module.exports = {
 		providedExports: true,
 		usedExports: false,
 		"sideEffects": false,
-		"mangleExports": "size",
+		// "mangleExports": "size",
+	},
+	externals: {
+		streamroller: 'commonjs2 streamroller'
 	},
 	plugins: [
 		new webpack.DefinePlugin({
