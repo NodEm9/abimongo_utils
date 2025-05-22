@@ -7,7 +7,7 @@ const { VERSION } = require('ts-node');
 module.exports = {
 	mode: "production",
 	entry: "./src/index.ts",
-	target: "['web', 'node']",
+	target: ['web', 'node'],
 	devtool: "source-map",
 	output: {
 		filename: "abimongo-utils.js",
