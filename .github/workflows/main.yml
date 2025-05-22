@@ -1,4 +1,4 @@
-name: abimongo_utils
+name: CI- abimongo_utils
 
 on:
   push:
