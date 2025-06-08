@@ -7,6 +7,16 @@ import {
 } from "./logger.types";
 import { RemoteTransporter } from '../types';
 
+export type AbimongoConfig = {
+	advanced?: {
+		circuitBreaker?: {
+			enabled?: boolean;
+			maxFailures?: number;
+			resetTimeout?: number;
+		};
+	}
+}
+
 export interface LoggerConfig {
 	logger?: ILogger;
 	level?: LogLevel;

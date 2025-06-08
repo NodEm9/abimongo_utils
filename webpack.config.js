@@ -12,7 +12,7 @@ module.exports = {
 	output: {
 		filename: "abimongo-utils.js",
 		path: path.resolve(__dirname, "dist"),
-		library: "abimongo-utils",
+		library: "@abimongo-utils",
 		libraryTarget: "umd",
 		clean: true,
 	},

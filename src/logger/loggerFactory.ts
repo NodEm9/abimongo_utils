@@ -1,10 +1,18 @@
-import { LoggerConfig } from '../types/abimongoConfig';
+import { AbimongoConfig, LoggerConfig } from '../types/abimongoConfig';
 import { LOG_LEVELS, shouldLog, colorByLevel } from '../logger';
 import { ILogger, LogEntry, LogLevel } from '../types/logger.types';
 import { formatJSON, formatMessage } from '../utils/formatters';
 import { now } from '../utils/timeUtils';
 
-export function createLogger(config: LoggerConfig): ILogger {
+/**
+ * Creates a logger instance based on the provided configuration.
+ * 
+ * @param {LoggerConfig} config - The configuration for the logger.
+ * @param {AbimongoConfig} [abimongoConfig] - Optional Abimongo configuration.
+ * @returns {ILogger} - The logger instance.
+ */
+
+export function createLogger(config: LoggerConfig, abimongoConfig?: AbimongoConfig): ILogger {
 	const {
 		level = 'info',
 		transports = [],
@@ -73,21 +81,21 @@ export function createLogger(config: LoggerConfig): ILogger {
 					: formatted
 				
 			
-			if (json == true) {
-				const jsonOutput = formatJSON({ 
-					timestamp: now(),
-					level: levelKey,
-					message,
-					meta: enriched,
-					source: meta[0]?.source,
-					prefix: formatOptions?.prefix,
-				})
-				const applyColor = colorize == true
-					? colorByLevel(levelKey, jsonOutput)
-					: jsonOutput
-				writeToTransports(levelKey, applyColor);
-				return;
-			}
+			// if (json == true) {
+			// 	const jsonOutput = formatJSON({ 
+			// 		timestamp: now(),
+			// 		level: levelKey,
+			// 		message,
+			// 		meta: enriched,
+			// 		source: meta[0]?.source,
+			// 		prefix: formatOptions?.prefix,
+			// 	})
+			// 	const applyColor = colorize == true
+			// 		? colorByLevel(levelKey, jsonOutput)
+			// 		: jsonOutput
+			// 	writeToTransports(levelKey, applyColor);
+			// 	return;
+			// }
 			config.logger?.[levelKey as keyof ILogger]?.(output, ...meta, enriched, colorize);
 			writeToTransports(levelKey, output);
 

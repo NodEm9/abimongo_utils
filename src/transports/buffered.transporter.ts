@@ -1,5 +1,4 @@
-// Project: abimongo_utils
-// File: buffered.transporter.ts
+
 type BufferedLogEntry = {
   timestamp: string;
   level: string;

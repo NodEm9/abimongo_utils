@@ -5,9 +5,9 @@ import path from 'path';
 
 interface RotatingFileTransporterOptions {
 	filename?: string;
-	frequency?: string;  // e.g., 'daily'
-	maxSize?: number;    // in bytes
-	backups?: number;    // number of backups to keep
+	frequency?: string; 
+	maxSize?: number;
+	backups?: number;
 }
 
 export function createRotatingFileTransporter(options?: RotatingFileTransporterOptions) {

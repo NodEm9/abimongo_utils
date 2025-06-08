@@ -52,6 +52,18 @@ jobs:
             ./LICENSE
           if-no-files-found: error
           retention-days: 14
+      
+      - name: Add and Commit Changes
+        run: |
+          git add .
+          git commit -m "chore: Automated release [skip ci]" || echo "No changes to commit"
+          git push origin main
+
+      - name: Prepare for npm Versioning
+        run: |
+          git add .
+          git commit -m "chore: Prepare for version bump [skip ci]" || echo "No changes to commit"
+          git push origin main
 
       - name: Publish to npm (Only on Main)
         if: github.ref == 'refs/heads/main'
