@@ -2,20 +2,18 @@
 import { AbimongoConfig, ILogger, LoggerConfig } from '../types';
 import { createLogger } from './loggerFactory';
 
-export type InitLoggerWithCircuitBreaker = {
-  config: LoggerConfig;
-  advancedConfig?: AbimongoConfig;
-};
+// export type InitLoggerWithCircuitBreaker = {
+//   advancedConfig?: AbimongoConfig;
+// };
 
 export function setupLogger(
   config: LoggerConfig,
-  advancedConfig?: AbimongoConfig
 ): ILogger {
   if (config.logger) return config.logger;
-  if (advancedConfig?.circuitBreaker?.enabled) {
+  if (config?.circuitBreaker?.enabled) {
     console.warn('Circuit breaker is enabled, consider configuring logger accordingly.');
   }
-  return createLogger({ ...config }, advancedConfig);
+  return createLogger({ ...config });
 }
 
 
@@ -26,7 +24,7 @@ export class Logger {
   constructor() {}
 
   // Additional methods can be added as needed
- static initialize({ config, advancedConfig }: InitLoggerWithCircuitBreaker) {
-    this.logger = setupLogger(config, advancedConfig);
+ static initialize(config: LoggerConfig) {
+    this.logger = setupLogger({ ...config });
   }
 }
