@@ -12,7 +12,7 @@ export function setupLogger(
   advancedConfig?: AbimongoConfig
 ): ILogger {
   if (config.logger) return config.logger;
-  if (advancedConfig?.advanced?.circuitBreaker?.enabled) {
+  if (advancedConfig?.circuitBreaker?.enabled) {
     console.warn('Circuit breaker is enabled, consider configuring logger accordingly.');
   }
   return createLogger({ ...config }, advancedConfig);

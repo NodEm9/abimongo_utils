@@ -8,13 +8,11 @@ import {
 import { RemoteTransporter } from '../types';
 
 export type AbimongoConfig = {
-	advanced?: {
-		circuitBreaker?: {
-			enabled?: boolean;
-			maxFailures?: number;
-			resetTimeout?: number;
-		};
-	}
+	circuitBreaker?: {
+		enabled?: boolean;
+		retryAttempts?: number;
+		retryDelay?: number;
+	};
 }
 
 export interface LoggerConfig {
@@ -28,5 +26,6 @@ export interface LoggerConfig {
 	hooks?: LoggerHooks;
 	enrichMetadata?: (meta: Record<string, any>) => Record<string, any>;
 	shouldLog?: (level: LogLevel, meta?: Record<string, any>) => boolean;
+	circuitBreaker?: AbimongoConfig['circuitBreaker'];
 }
 
