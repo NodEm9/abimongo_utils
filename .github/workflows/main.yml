@@ -60,6 +60,7 @@ jobs:
       - name: Configure Git
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SSH_SECRET_KEY: ${{ secrets.SSH_SECRET_KEY }}
         run: |
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com" 
           git config --global user.name "$(gh api /users/${GITHUB_ACTOR} | jq .name -r)"
@@ -71,7 +72,7 @@ jobs:
           git commit -m "chore: Automated release [skip ci]" || echo "No changes to commit"
           git push origin main
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SSH_SECRET_KEY: ${{ secrets.SSH_SECRET_KEY }}
 
       - name: Prepare for npm Versioning
         run: |
@@ -79,7 +80,7 @@ jobs:
           git commit -m "chore: Prepare for version bump [skip ci]" || echo "No changes to commit"
           git push origin main
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SSH_SECRET_KEY: ${{ secrets.SSH_SECRET_KEY }}
 
       - name: Bump Version (Only on Main)
         if: github.ref == 'refs/heads/main'
@@ -90,7 +91,7 @@ jobs:
           git commit -m "chore: Commit untracked Version bump [skip ci]" || echo "No changes to commit"
           git push origin main 
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SSH_SECRET_KEY: ${{ secrets.SSH_SECRET_KEY }}
 
       - name: Publish to npm (Only on Main)
         if: github.ref == 'refs/heads/main'
