@@ -41,7 +41,8 @@ const logger = setupLogger({
         // Write to console, file, or any custom destination
         console.log(msg);
       }
-    }
+    },
+    // Add other properties here
   ],
   hooks: {
     onLog: (msg, meta) => {
