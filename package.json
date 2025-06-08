@@ -31,7 +31,7 @@
     "prepare": "npm run clean && npm run build",
     "patch:version": "npm version patch",
     "prepublishOnly": "npm run prepare && npm run patch:version",
-    "publish": "npm publish"
+    "publish": "npm publish --access public --registry=https://registry.npmjs.org/"
   },
   "keywords": [
     "abimong_utils",
