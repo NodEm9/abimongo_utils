@@ -66,22 +66,22 @@ jobs:
           git config --global user.name "$(gh api /users/${GITHUB_ACTOR} | jq .name -r)"
           git config -l
 
-      - name: Add and Commit Changes
-        run: |
-          git add .
-          git commit -m "chore: Automated release [skip ci]" || echo "No changes to commit"
-          git push origin main
-        env:
-          GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
-          SSH_SECRET_KEY: ${{ secrets.SSH_SECRET_KEY }}
+      # - name: Add and Commit Changes
+      #   run: |
+      #     git add .
+      #     git commit -m "chore: Automated release [skip ci]" || echo "No changes to commit"
+      #     git push origin main
+      #   env:
+      #     GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
+      #     SSH_SECRET_KEY: ${{ secrets.SSH_SECRET_KEY }}
 
-      - name: Prepare for npm Versioning
-        run: |
-          git add .
-          git commit -m "chore: Prepare for version bump [skip ci]" || echo "No changes to commit"
-          git push origin main
-        env:
-          SSH_SECRET_KEY: ${{ secrets.SSH_SECRET_KEY }}
+      # - name: Prepare for npm Versioning
+      #   run: |
+      #     git add .
+      #     git commit -m "chore: Prepare for version bump [skip ci]" || echo "No changes to commit"
+      #     git push origin main
+      #   env:
+      #     SSH_SECRET_KEY: ${{ secrets.SSH_SECRET_KEY }}
 
       - name: Bump Version (Only on Main)
         if: github.ref == 'refs/heads/main'
