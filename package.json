@@ -30,7 +30,7 @@
     "clean": "rimraf dist",
     "prepare": "npm run clean && npm run build",
     "patch:version": "npm version patch",
-    "prepublishOnly": "npm run build && npm run patch:version ",
+    "prepublishOnly": "npm run prepare && npm run patch:version",
     "publish": "npm publish"
   },
   "keywords": [
