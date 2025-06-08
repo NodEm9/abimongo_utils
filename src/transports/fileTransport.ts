@@ -22,19 +22,4 @@ export const formatLog = (entry: LogEntry) => {
   const { level, message, meta, timestamp } = entry;
   const formattedMeta = meta.length > 0 ? ` ${JSON.stringify(meta)}` : '';
   return `[${timestamp}] - ${level.toUpperCase()}: ${message}${formattedMeta}`;
-}
-
-
-// export const fileTransport = (filePath: string): LogTransport => {
-//   const fullPath = path.resolve(filePath);
-//   fs.mkdirSync(path.dirname(fullPath), { recursive: true });
-
-//   const stream = fs.createWriteStream(fullPath, { flags: 'a' });
-
-//   return {
-//     log(level: LogLevel, message: string) {
-//       const line = formatLog(level, message, now());
-//       stream.write(line + '\n');
-//     },
-//   };
-// };
+};

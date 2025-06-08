@@ -14,8 +14,8 @@ export const createHttpTransport = (url: string): RemoteTransporter => {
 	};
 }
 
-export const createElasticTransport =
-  (url: string, index: string): RemoteTransporter =>{
+export function createElasticTransport
+  (url: string, index: string): RemoteTransporter{
   return async (message, meta) => {
     await axios.post(`${url}/${index}/_doc`, {
       timestamp: new Date().toISOString(),
@@ -26,11 +26,11 @@ export const createElasticTransport =
   };
 }
 
-export const createLokiTransport =
+export function createLokiTransport
   (
     pushUrl: string,
     labels: Record<string, string>
-  ): RemoteTransporter => {
+  ): RemoteTransporter {
   return async (message, meta) => {
     await axios.post(pushUrl, {
       streams: [
