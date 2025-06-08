@@ -1,6 +1,6 @@
 {
   "name": "abimongo_utils",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "main": "dist/abimongo-utils.js",
   "typings": "dist/index.d.ts",
   "files": [
