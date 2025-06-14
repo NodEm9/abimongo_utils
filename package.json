@@ -10,7 +10,7 @@
   "browser": {
     "async_hooks": false
   },
-  "sideEffects": false,
+  "sideEffects": ["./sideEffects/index.ts"],
   "repository": {
     "type": "git",
     "url": ""
@@ -36,7 +36,7 @@
     "minor:version": "npm version minor",
     "major:version": "npm version major",
     "publish": "npm publish --access public",
-    "prepublishOnly": "npm run build:cjs & npm run build:esm & npm test"
+    "prepublishOnly": "webpack --config webpack.config.cjs.js & webpack --config webpack.config.js & npm test"
   },
   "keywords": [
     "abimong_utils",
@@ -50,7 +50,6 @@
       "email": "padave805@gmail.com"
     }
   ],
-  "type": "module",
   "license": "ISC",
   "description": "",
   "devDependencies": {

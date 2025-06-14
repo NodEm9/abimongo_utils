@@ -1,25 +1,31 @@
 {
   "compilerOptions": {
     "target": "ES2020", 
-    "lib": ["DOM","ES2020", "ESNext"],                                
+    "lib": ["DOM", "DOM.Iterable", "ES2020", "ESNext"],
+    "allowJs": true,                                  
     "moduleDetection": "auto",                       
     "module": "ESNext",      
     "moduleResolution": "node",
     "rootDir": "./src",
     "outDir": "./dist",
-    "typeRoots": ["./node_modules/@types", "./src/types"],
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types"
+    ],
     "declaration": true,
-    "declarationDir": "./dist/types",
     "declarationMap": true,
+    "experimentalDecorators": true,
     "resolveJsonModule": true,
-    "esModuleInterop": true,                                       
+    "esModuleInterop": true,
+    "importHelpers": true,                                         
     "allowSyntheticDefaultImports": true, 
-    "forceConsistentCasingInFileNames": true,          
     "skipLibCheck": true,
-    "strict": true,                                                                   
+    "forceConsistentCasingInFileNames": true,          
+    "strict": true,                                      
+    "noImplicitAny": true,                              
   },
   "include": [
-    "src/**/*.ts",
+    "src/**/*",
     ],
   "exclude": [
     "node_modules"

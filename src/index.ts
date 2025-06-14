@@ -1,5 +1,4 @@
 import { createLogger } from './logger';
-import { createRotatingFileTransporter } from './transports';
 
 
 declare global {
@@ -18,7 +17,7 @@ export * from './logger';
 export { setupLogger } from './logger';
 export { createLogger } from './logger';
 export { DefaultLogger } from './logger/defaultLogger';
-export { createRotatingFileTransporter };
+export { createRotatingFileTransporter } from './transports/rotating.transporter';
 export { consoleTransport } from './transports/consoleTransport';
 export { FileTransporter } from './transports/fileTransport';
 export { AsyncBatchTransporter } from './transports/async-batch.transporter';
