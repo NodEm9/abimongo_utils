@@ -1,4 +1,5 @@
 import { createLogger } from './logger';
+import { createRotatingFileTransporter } from './transports';
 
 
 declare global {
@@ -13,13 +14,11 @@ if (typeof window !== 'undefined') {
 	window.Buffer = Buffer;
 }
 
-
-
 export * from './logger';
 export { setupLogger } from './logger';
 export { createLogger } from './logger';
 export { DefaultLogger } from './logger/defaultLogger';
-export { createRotatingFileTransporter } from './transports/rotating.transporter';
+export { createRotatingFileTransporter };
 export { consoleTransport } from './transports/consoleTransport';
 export { FileTransporter } from './transports/fileTransport';
 export { AsyncBatchTransporter } from './transports/async-batch.transporter';

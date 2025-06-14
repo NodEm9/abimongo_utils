@@ -35,8 +35,8 @@
     "patch:version": "npm version patch",
     "minor:version": "npm version minor",
     "major:version": "npm version major",
-    "publish": "npm run build && npm publish --access public",
-    "prepublishOnly": "npm run build && npm test"
+    "publish": "npm publish --access public",
+    "prepublishOnly": "npm run build:cjs & npm run build:esm & npm test"
   },
   "keywords": [
     "abimong_utils",
@@ -50,6 +50,7 @@
       "email": "padave805@gmail.com"
     }
   ],
+  "type": "module",
   "license": "ISC",
   "description": "",
   "devDependencies": {

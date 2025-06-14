@@ -1,14 +1,9 @@
 // rotating.transporter.ts
 import { DateRollingFileStream } from 'streamroller';
-
 import path from 'path';
+import { RotatingFileTransporterOptions } from '../types/logger.types';
 
-interface RotatingFileTransporterOptions {
-	filename?: string;
-	frequency?: string; 
-	maxSize?: number;
-	backups?: number;
-}
+
 
 export function createRotatingFileTransporter(options?: RotatingFileTransporterOptions) {
   const {

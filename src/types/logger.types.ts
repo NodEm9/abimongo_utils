@@ -56,3 +56,10 @@ export interface LoggerHooks {
   onFlush?: (batch: LogEntry[]) => void;
   onError?: (error: any, entry?: LogEntry | LogEntry[]) => void;
 }
+
+export interface RotatingFileTransporterOptions {
+  filename?: string;
+  frequency?: string; 
+  maxSize?: number;
+  backups?: number;
+}

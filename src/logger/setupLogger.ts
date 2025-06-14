@@ -1,10 +1,6 @@
-// logger/setupLogger.ts
-import { AbimongoConfig, ILogger, LoggerConfig } from '../types';
+import { ILogger, LoggerConfig } from '../types';
 import { createLogger } from './loggerFactory';
 
-// export type InitLoggerWithCircuitBreaker = {
-//   advancedConfig?: AbimongoConfig;
-// };
 
 export function setupLogger(
   config: LoggerConfig,
@@ -20,11 +16,16 @@ export function setupLogger(
 
 export class Logger {
   private static logger: ILogger;
-
-  constructor() {}
+  static get instance(): ILogger {
+    if (!this.logger) {
+      throw new Error('Logger not initialized. Call Logger.initialize(config) first.');
+    }
+    return this.logger;
+  }
+  constructor() { }
 
   // Additional methods can be added as needed
- static initialize(config: LoggerConfig) {
+  static initialize(config: LoggerConfig) {
     this.logger = setupLogger({ ...config });
   }
 }

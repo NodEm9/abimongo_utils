@@ -1,5 +1,5 @@
 import { AbimongoConfig, LoggerConfig } from '../types/abimongoConfig';
-import { LOG_LEVELS, shouldLog, colorByLevel } from '../logger';
+import { LOG_LEVELS, colorByLevel } from '../logger';
 import { ILogger, LogEntry, LogLevel } from '../types/logger.types';
 import { formatJSON, formatMessage } from '../utils/formatters';
 import { now } from '../utils/timeUtils';
@@ -81,21 +81,21 @@ export function createLogger(config: LoggerConfig, abimongoConfig?: AbimongoConf
 					: formatted
 				
 			
-			// if (json == true) {
-			// 	const jsonOutput = formatJSON({ 
-			// 		timestamp: now(),
-			// 		level: levelKey,
-			// 		message,
-			// 		meta: enriched,
-			// 		source: meta[0]?.source,
-			// 		prefix: formatOptions?.prefix,
-			// 	})
-			// 	const applyColor = colorize == true
-			// 		? colorByLevel(levelKey, jsonOutput)
-			// 		: jsonOutput
-			// 	writeToTransports(levelKey, applyColor);
-			// 	return;
-			// }
+			if (json == true) {
+				const jsonOutput = formatJSON({ 
+					timestamp: now(),
+					level: levelKey,
+					message,
+					meta: enriched,
+					source: meta[0]?.source,
+					prefix: formatOptions?.prefix,
+				})
+				const applyColor = colorize == true
+					? colorByLevel(levelKey, jsonOutput)
+					: jsonOutput
+				writeToTransports(levelKey, applyColor);
+				return;
+			}
 			config.logger?.[levelKey as keyof ILogger]?.(output, ...meta, enriched, colorize);
 			writeToTransports(levelKey, output);
 
