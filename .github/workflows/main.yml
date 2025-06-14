@@ -53,46 +53,46 @@ jobs:
           if-no-files-found: error
           retention-days: 14
       
-      # - name: Configure Git for SSH
-      #   run: |
-      #     git remote set-url origin git@github.com:${{ github.repository }}.git
+      - name: Configure Git for SSH
+        run: |
+          git remote set-url origin git@github.com:${{ github.repository }}.git
       
-      # - name: Configure Git
-      #   env:
-      #     GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-      #   run: |
-      #     git config user.email "${GITHUB_ACTOR}@users.noreply.github.com" 
-      #     git config user.name "$(gh api /users/${GITHUB_ACTOR} | jq .name -r)"
-      #     git config -l
+      - name: Configure Git
+        env:
+          GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com" 
+          git config user.name "$(gh api /users/${GITHUB_ACTOR} | jq .name -r)"
+          git config -l
 
-      # - name: Add and Commit Changes
-      #   run: |
-      #     git add .
-      #     git commit -m "chore: Automated release [skip ci]" || echo "No changes to commit"
-      #     git push origin main
-      #   env:
-      #     GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
-      #     SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Add and Commit Changes
+        run: |
+          git add .
+          git commit -m "chore: Automated release [skip ci]" || echo "No changes to commit"
+          git push origin main
+        env:
+          GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      # - name: Prepare for npm Versioning
-      #   run: |
-      #     git add .
-      #     git commit -m "chore: Prepare for version bump [skip ci]" || echo "No changes to commit"
-      #     git push origin main
-      #   env:
-      #     SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Prepare for npm Versioning
+        run: |
+          git add .
+          git commit -m "chore: Prepare for version bump [skip ci]" || echo "No changes to commit"
+          git push origin main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      # - name: Bump Version (Only on Main)
-      #   if: github.ref == 'refs/heads/main'
-      #   run: |
-      #     git status  # Debug step to verify clean working directory
-      #     npm version patch -m "CI: Bump version to %s [skip ci]"
-      #     git add . 
-      #     git commit -m "chore: Commit untracked Version bump [skip ci]" || echo "No changes to commit"
-      #     git push origin main 
-      #   env:
-      #     SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Bump Version (Only on Main)
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git status  # Debug step to verify clean working directory
+          npm version patch -m "CI: Bump version to %s [skip ci]"
+          git add . 
+          git commit -m "chore: Commit untracked Version bump [skip ci]" || echo "No changes to commit"
+          git push origin main 
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Publish to npm (Only on Main)
         if: github.ref == 'refs/heads/main'

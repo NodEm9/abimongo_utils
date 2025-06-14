@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { createCircuitBreaker, retryWithBackoff } from "../utils";
-import { RemoteTransporter } from "types";
+import { RemoteTransporter } from "../types";
 
 
 export const createHttpTransport = (url: string): RemoteTransporter => {
