@@ -5,16 +5,20 @@ const { TsconfigPathsPlugin } = require('tsconfig-paths-webpack-plugin');
 const { VERSION } = require('ts-node');
 
 module.exports = {
-	mode: "production",
 	entry: "./src/index.ts",
 	target: "node",
-	devtool: "source-map",
+	mode: "production",
 	output: {
 		filename: "abimongo-utils.js",
 		path: path.resolve(__dirname, "dist"),
-		library: "@abimongo-utils",
-		libraryTarget: "umd",
+		library: {
+			type: "module",
+		},
+		module: true,
 		clean: true,
+	},
+	experiments: {
+		outputModule: true,
 	},
 	module: {
 		rules: [
@@ -34,10 +38,7 @@ module.exports = {
 		byDependency: {
 			esm: {
 				mainFields: ['browser', 'module', 'main'],
-			},
-			commonjs2: {
-				aliasFields: ['browser', 'module'],
-			},
+			}
 		},
 		plugins: [new TsconfigPathsPlugin()],
 	},

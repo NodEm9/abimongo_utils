@@ -2,9 +2,10 @@
   "name": "abimongo_utils",
   "version": "0.0.24",
   "main": "dist/abimongo-utils.js",
+  "module": "dist/abimongo-utils.js",
   "typings": "dist/index.d.ts",
   "files": [
-    "dist/"
+    "dist"
   ],
   "browser": {
     "async_hooks": false
@@ -22,7 +23,9 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "webpack --config webpack.config.js",
+    "build:esm": "webpack --config webpack.config.js",
+    "build:cjs": "webpack --config webpack.config.cjs.js",
+    "build": "npm run build:cjs && npm run build:esm",
     "build:watch": "webpack --config webpack.config.js --watch",
     "test": "jest --detectOpenHandles --coverage",
     "test:watch": "tsc --noEmit && jest --watch",
@@ -30,8 +33,10 @@
     "clean": "rimraf dist",
     "prepare": "npm run clean && npm run build",
     "patch:version": "npm version patch",
-    "prepublishOnly": "npm run prepare",
-    "publish": "npm run patch:version & npm publish --access public --registry=https://registry.npmjs.org/"
+    "minor:version": "npm version minor",
+    "major:version": "npm version major",
+    "publish": "npm run build && npm publish --access public",
+    "prepublishOnly": "npm run build && npm test"
   },
   "keywords": [
     "abimong_utils",
