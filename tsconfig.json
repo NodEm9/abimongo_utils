@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2020", 
-    "lib": ["DOM", "DOM.Iterable", "ES2020", "ESNext"],
-    // "allowJs": true,                                  
+    "lib": ["DOM", "DOM.Iterable", "ES2020", "ESNext"],                                
     "moduleDetection": "auto",                       
     "module": "ES2020",      
     "moduleResolution": "node",
@@ -14,15 +13,12 @@
     ],
     "declaration": true,
     "declarationMap": true,
-    // "experimentalDecorators": true,
-    // "resolveJsonModule": true,
-    "esModuleInterop": true,
-    // "importHelpers": true,                                         
+    "resolveJsonModule": true,
+    "esModuleInterop": true,                                       
     "allowSyntheticDefaultImports": true, 
     "forceConsistentCasingInFileNames": true,          
     "skipLibCheck": true,
-    "strict": true,                                      
-    // "noImplicitAny": true,                              
+    "strict": true,                                                                   
   },
   "include": [
     "src/**/*.ts",
