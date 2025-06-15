@@ -1,3 +1,6 @@
+import { createRequire } from "node:module";
+
+const require = createRequire(import.meta.url);
 const { createDefaultPreset } = require("ts-jest");
 const tsJestTransformCfg = createDefaultPreset().transform;
 

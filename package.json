@@ -31,7 +31,7 @@
     "patch:version": "npm version patch",
     "minor:version": "npm version minor",
     "major:version": "npm version major",
-    "prepublishOnly": "npm run clean && npm run build && npm run docs && npm run test"
+    "prepublishOnly": "npm run clean && npm run build && npm run test"
   },
   "sideEffects": false,
   "keywords": [
