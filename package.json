@@ -4,13 +4,9 @@
   "main": "./dist/abimongo-utils.js",
   "typings": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist/"
   ],
-  "sideEffects": [
-    "**/*.js",
-    "**/*.d.ts",
-    "./src/transports/*.ts"
-  ],
+  "sideEffects": true,
   "browser": {
     "async_hooks": false
   },

@@ -1,1 +1,0 @@
-export declare function createCircuitBreaker<T extends (...args: any[]) => Promise<any>>(fn: T, failureThreshold?: number, cooldownPeriod?: number): (...args: Parameters<T>) => Promise<ReturnType<T>>;
