@@ -11,7 +11,6 @@ module.exports = {
 	output: {
 		filename: "abimongo-utils.js",
 		path: path.resolve(__dirname, "dist"),
-		globalObject: "this",
 		library: {
 			name: "abimongo_utils",
 			type: "umd",
@@ -42,6 +41,7 @@ module.exports = {
 	},
 	optimization: {
 		providedExports: true,
+		usedExports: true,		
 		"sideEffects": false,
 		"mangleExports": "size",
 	},

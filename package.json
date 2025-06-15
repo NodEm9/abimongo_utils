@@ -36,10 +36,10 @@
     "minor:version": "npm version minor",
     "major:version": "npm version major",
     "publish": "npm publish --access public",
-    "prepublishOnly": "webpack --config webpack.config.js & npm test"
+    "prepublishOnly": "npm test"
   },
   "keywords": [
-    "abimong_utils",
+    "abimongo_utils",
     "logger",
     "Advance logging"
   ],
