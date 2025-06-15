@@ -10,9 +10,7 @@
   "browser": {
     "async_hooks": false
   },
-  "sideEffects": [
-    "./src/transports/rotating.transporter.ts"
-  ],
+  "sideEffects": ["*.js", "*.ts", "*.d.ts"],
   "repository": {
     "type": "git",
     "url": ""
@@ -33,8 +31,7 @@
     "clean": "rimraf dist",
     "patch:version": "npm version patch",
     "minor:version": "npm version minor",
-    "major:version": "npm version major",
-    "publish": "npm publish"
+    "major:version": "npm version major"
   },
   "keywords": [
     "abimongo_utils",
