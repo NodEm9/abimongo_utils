@@ -1,6 +1,6 @@
 {
   "name": "abimongo_utils",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "main": "dist/abimongo-utils.js",
   "module": "dist/abimongo-utils.js",
   "typings": "dist/index.d.ts",
@@ -10,7 +10,11 @@
   "browser": {
     "async_hooks": false
   },
-  "sideEffects": ["*.js", "*.ts", "*.d.ts"],
+  "sideEffects": [
+    "*.js",
+    "*.ts",
+    "*.d.ts"
+  ],
   "repository": {
     "type": "git",
     "url": ""
