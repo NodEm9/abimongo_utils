@@ -1,4 +1,4 @@
-[**abimongo_utils v0.3.5**](../README.md)
+[**abimongo_utils v0.4.0**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Interface: RotatingFileTransporterOptions
 
-Defined in: [types/logger.types.ts:60](https://github.com/NodEm9/abimongo_utils/blob/62e08380578108b0497622fb9a13efb3beac383a/src/types/logger.types.ts#L60)
+Defined in: [types/logger.types.ts:60](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/logger.types.ts#L60)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [types/logger.types.ts:60](https://github.com/NodEm9/abimongo_utils/
 
 > `optional` **backups**: `number`
 
-Defined in: [types/logger.types.ts:64](https://github.com/NodEm9/abimongo_utils/blob/62e08380578108b0497622fb9a13efb3beac383a/src/types/logger.types.ts#L64)
+Defined in: [types/logger.types.ts:64](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/logger.types.ts#L64)
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: [types/logger.types.ts:64](https://github.com/NodEm9/abimongo_utils/
 
 > `optional` **filename**: `string`
 
-Defined in: [types/logger.types.ts:61](https://github.com/NodEm9/abimongo_utils/blob/62e08380578108b0497622fb9a13efb3beac383a/src/types/logger.types.ts#L61)
+Defined in: [types/logger.types.ts:61](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/logger.types.ts#L61)
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: [types/logger.types.ts:61](https://github.com/NodEm9/abimongo_utils/
 
 > `optional` **frequency**: `string`
 
-Defined in: [types/logger.types.ts:62](https://github.com/NodEm9/abimongo_utils/blob/62e08380578108b0497622fb9a13efb3beac383a/src/types/logger.types.ts#L62)
+Defined in: [types/logger.types.ts:62](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/logger.types.ts#L62)
 
 ***
 
@@ -38,4 +38,4 @@ Defined in: [types/logger.types.ts:62](https://github.com/NodEm9/abimongo_utils/
 
 > `optional` **maxSize**: `number`
 
-Defined in: [types/logger.types.ts:63](https://github.com/NodEm9/abimongo_utils/blob/62e08380578108b0497622fb9a13efb3beac383a/src/types/logger.types.ts#L63)
+Defined in: [types/logger.types.ts:63](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/logger.types.ts#L63)

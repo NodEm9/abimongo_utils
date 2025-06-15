@@ -1,4 +1,4 @@
-[**abimongo_utils v0.3.5**](../README.md)
+[**abimongo_utils v0.4.0**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Interface: LoggerHooks
 
-Defined in: [types/logger.types.ts:54](https://github.com/NodEm9/abimongo_utils/blob/62e08380578108b0497622fb9a13efb3beac383a/src/types/logger.types.ts#L54)
+Defined in: [types/logger.types.ts:54](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/logger.types.ts#L54)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [types/logger.types.ts:54](https://github.com/NodEm9/abimongo_utils/
 
 > `optional` **onError**: (`error`, `entry?`) => `void`
 
-Defined in: [types/logger.types.ts:57](https://github.com/NodEm9/abimongo_utils/blob/62e08380578108b0497622fb9a13efb3beac383a/src/types/logger.types.ts#L57)
+Defined in: [types/logger.types.ts:57](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/logger.types.ts#L57)
 
 #### Parameters
 
@@ -36,7 +36,7 @@ Defined in: [types/logger.types.ts:57](https://github.com/NodEm9/abimongo_utils/
 
 > `optional` **onFlush**: (`batch`) => `void`
 
-Defined in: [types/logger.types.ts:56](https://github.com/NodEm9/abimongo_utils/blob/62e08380578108b0497622fb9a13efb3beac383a/src/types/logger.types.ts#L56)
+Defined in: [types/logger.types.ts:56](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/logger.types.ts#L56)
 
 #### Parameters
 
@@ -54,7 +54,7 @@ Defined in: [types/logger.types.ts:56](https://github.com/NodEm9/abimongo_utils/
 
 > `optional` **onLog**: (`entry`) => `void`
 
-Defined in: [types/logger.types.ts:55](https://github.com/NodEm9/abimongo_utils/blob/62e08380578108b0497622fb9a13efb3beac383a/src/types/logger.types.ts#L55)
+Defined in: [types/logger.types.ts:55](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/logger.types.ts#L55)
 
 #### Parameters
 

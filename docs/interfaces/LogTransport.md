@@ -1,4 +1,4 @@
-[**abimongo_utils v0.3.5**](../README.md)
+[**abimongo_utils v0.4.0**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Interface: LogTransport
 
-Defined in: [types/logger.types.ts:36](https://github.com/NodEm9/abimongo_utils/blob/62e08380578108b0497622fb9a13efb3beac383a/src/types/logger.types.ts#L36)
+Defined in: [types/logger.types.ts:36](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/logger.types.ts#L36)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [types/logger.types.ts:36](https://github.com/NodEm9/abimongo_utils/
 
 > **log**: (`level`, `message`, `meta?`) => `void`
 
-Defined in: [types/logger.types.ts:37](https://github.com/NodEm9/abimongo_utils/blob/62e08380578108b0497622fb9a13efb3beac383a/src/types/logger.types.ts#L37)
+Defined in: [types/logger.types.ts:37](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/logger.types.ts#L37)
 
 #### Parameters
 

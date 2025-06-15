@@ -1,4 +1,4 @@
-[**abimongo_utils v0.3.5**](../README.md)
+[**abimongo_utils v0.4.0**](../README.md)
 
 ***
 
@@ -8,7 +8,7 @@
 
 > **createCircuitBreaker**\<`T`\>(`fn`, `failureThreshold`, `cooldownPeriod`): (...`args`) => `Promise`\<`ReturnType`\<`T`\>\>
 
-Defined in: [utils/circuitBreaker/circuitBreaker.ts:1](https://github.com/NodEm9/abimongo_utils/blob/62e08380578108b0497622fb9a13efb3beac383a/src/utils/circuitBreaker/circuitBreaker.ts#L1)
+Defined in: [utils/circuitBreaker/circuitBreaker.ts:1](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/utils/circuitBreaker/circuitBreaker.ts#L1)
 
 ## Type Parameters
 

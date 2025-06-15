@@ -1,8 +1,8 @@
-**abimongo_utils v0.3.5**
+**abimongo_utils v0.4.0**
 
 ***
 
-# abimongo_utils v0.3.5
+# abimongo_utils v0.4.0
 
 ## Classes
 

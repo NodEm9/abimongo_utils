@@ -1,4 +1,4 @@
-[**abimongo_utils v0.3.5**](../README.md)
+[**abimongo_utils v0.4.0**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Interface: LoggerConfig
 
-Defined in: [types/abimongoConfig.ts:18](https://github.com/NodEm9/abimongo_utils/blob/62e08380578108b0497622fb9a13efb3beac383a/src/types/abimongoConfig.ts#L18)
+Defined in: [types/abimongoConfig.ts:18](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/abimongoConfig.ts#L18)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [types/abimongoConfig.ts:18](https://github.com/NodEm9/abimongo_util
 
 > `optional` **circuitBreaker**: `object`
 
-Defined in: [types/abimongoConfig.ts:29](https://github.com/NodEm9/abimongo_utils/blob/62e08380578108b0497622fb9a13efb3beac383a/src/types/abimongoConfig.ts#L29)
+Defined in: [types/abimongoConfig.ts:29](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/abimongoConfig.ts#L29)
 
 #### enabled?
 
@@ -34,7 +34,7 @@ Defined in: [types/abimongoConfig.ts:29](https://github.com/NodEm9/abimongo_util
 
 > `optional` **colorize**: `boolean`
 
-Defined in: [types/abimongoConfig.ts:21](https://github.com/NodEm9/abimongo_utils/blob/62e08380578108b0497622fb9a13efb3beac383a/src/types/abimongoConfig.ts#L21)
+Defined in: [types/abimongoConfig.ts:21](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/abimongoConfig.ts#L21)
 
 ***
 
@@ -42,7 +42,7 @@ Defined in: [types/abimongoConfig.ts:21](https://github.com/NodEm9/abimongo_util
 
 > `optional` **enrichMetadata**: (`meta`) => `Record`\<`string`, `any`\>
 
-Defined in: [types/abimongoConfig.ts:27](https://github.com/NodEm9/abimongo_utils/blob/62e08380578108b0497622fb9a13efb3beac383a/src/types/abimongoConfig.ts#L27)
+Defined in: [types/abimongoConfig.ts:27](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/abimongoConfig.ts#L27)
 
 #### Parameters
 
@@ -60,7 +60,7 @@ Defined in: [types/abimongoConfig.ts:27](https://github.com/NodEm9/abimongo_util
 
 > `optional` **excludedSources**: `string`[]
 
-Defined in: [types/abimongoConfig.ts:24](https://github.com/NodEm9/abimongo_utils/blob/62e08380578108b0497622fb9a13efb3beac383a/src/types/abimongoConfig.ts#L24)
+Defined in: [types/abimongoConfig.ts:24](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/abimongoConfig.ts#L24)
 
 ***
 
@@ -68,7 +68,7 @@ Defined in: [types/abimongoConfig.ts:24](https://github.com/NodEm9/abimongo_util
 
 > `optional` **formatOptions**: [`LoggerFormatOptions`](LoggerFormatOptions.md)
 
-Defined in: [types/abimongoConfig.ts:25](https://github.com/NodEm9/abimongo_utils/blob/62e08380578108b0497622fb9a13efb3beac383a/src/types/abimongoConfig.ts#L25)
+Defined in: [types/abimongoConfig.ts:25](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/abimongoConfig.ts#L25)
 
 ***
 
@@ -76,7 +76,7 @@ Defined in: [types/abimongoConfig.ts:25](https://github.com/NodEm9/abimongo_util
 
 > `optional` **hooks**: [`LoggerHooks`](LoggerHooks.md)
 
-Defined in: [types/abimongoConfig.ts:26](https://github.com/NodEm9/abimongo_utils/blob/62e08380578108b0497622fb9a13efb3beac383a/src/types/abimongoConfig.ts#L26)
+Defined in: [types/abimongoConfig.ts:26](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/abimongoConfig.ts#L26)
 
 ***
 
@@ -84,7 +84,7 @@ Defined in: [types/abimongoConfig.ts:26](https://github.com/NodEm9/abimongo_util
 
 > `optional` **json**: `boolean`
 
-Defined in: [types/abimongoConfig.ts:22](https://github.com/NodEm9/abimongo_utils/blob/62e08380578108b0497622fb9a13efb3beac383a/src/types/abimongoConfig.ts#L22)
+Defined in: [types/abimongoConfig.ts:22](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/abimongoConfig.ts#L22)
 
 ***
 
@@ -92,7 +92,7 @@ Defined in: [types/abimongoConfig.ts:22](https://github.com/NodEm9/abimongo_util
 
 > `optional` **level**: [`LogLevel`](../type-aliases/LogLevel.md)
 
-Defined in: [types/abimongoConfig.ts:20](https://github.com/NodEm9/abimongo_utils/blob/62e08380578108b0497622fb9a13efb3beac383a/src/types/abimongoConfig.ts#L20)
+Defined in: [types/abimongoConfig.ts:20](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/abimongoConfig.ts#L20)
 
 ***
 
@@ -100,7 +100,7 @@ Defined in: [types/abimongoConfig.ts:20](https://github.com/NodEm9/abimongo_util
 
 > `optional` **logger**: [`ILogger`](ILogger.md)
 
-Defined in: [types/abimongoConfig.ts:19](https://github.com/NodEm9/abimongo_utils/blob/62e08380578108b0497622fb9a13efb3beac383a/src/types/abimongoConfig.ts#L19)
+Defined in: [types/abimongoConfig.ts:19](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/abimongoConfig.ts#L19)
 
 ***
 
@@ -108,7 +108,7 @@ Defined in: [types/abimongoConfig.ts:19](https://github.com/NodEm9/abimongo_util
 
 > `optional` **shouldLog**: (`level`, `meta?`) => `boolean`
 
-Defined in: [types/abimongoConfig.ts:28](https://github.com/NodEm9/abimongo_utils/blob/62e08380578108b0497622fb9a13efb3beac383a/src/types/abimongoConfig.ts#L28)
+Defined in: [types/abimongoConfig.ts:28](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/abimongoConfig.ts#L28)
 
 #### Parameters
 
@@ -130,4 +130,4 @@ Defined in: [types/abimongoConfig.ts:28](https://github.com/NodEm9/abimongo_util
 
 > `optional` **transports**: (`WriteStream` \| [`RemoteTransporter`](../type-aliases/RemoteTransporter.md))[]
 
-Defined in: [types/abimongoConfig.ts:23](https://github.com/NodEm9/abimongo_utils/blob/62e08380578108b0497622fb9a13efb3beac383a/src/types/abimongoConfig.ts#L23)
+Defined in: [types/abimongoConfig.ts:23](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/abimongoConfig.ts#L23)

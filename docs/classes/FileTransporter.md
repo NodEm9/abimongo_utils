@@ -1,4 +1,4 @@
-[**abimongo_utils v0.3.5**](../README.md)
+[**abimongo_utils v0.4.0**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Class: FileTransporter
 
-Defined in: [transports/fileTransport.ts:6](https://github.com/NodEm9/abimongo_utils/blob/62e08380578108b0497622fb9a13efb3beac383a/src/transports/fileTransport.ts#L6)
+Defined in: [transports/fileTransport.ts:6](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/transports/fileTransport.ts#L6)
 
 ## Implements
 
@@ -18,7 +18,7 @@ Defined in: [transports/fileTransport.ts:6](https://github.com/NodEm9/abimongo_u
 
 > **new FileTransporter**(`stream`): `FileTransporter`
 
-Defined in: [transports/fileTransport.ts:7](https://github.com/NodEm9/abimongo_utils/blob/62e08380578108b0497622fb9a13efb3beac383a/src/transports/fileTransport.ts#L7)
+Defined in: [transports/fileTransport.ts:7](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/transports/fileTransport.ts#L7)
 
 #### Parameters
 
@@ -36,7 +36,7 @@ Defined in: [transports/fileTransport.ts:7](https://github.com/NodEm9/abimongo_u
 
 > **log**(`level`, `message`, `meta`): `void`
 
-Defined in: [transports/fileTransport.ts:14](https://github.com/NodEm9/abimongo_utils/blob/62e08380578108b0497622fb9a13efb3beac383a/src/transports/fileTransport.ts#L14)
+Defined in: [transports/fileTransport.ts:14](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/transports/fileTransport.ts#L14)
 
 #### Parameters
 
@@ -66,7 +66,7 @@ Defined in: [transports/fileTransport.ts:14](https://github.com/NodEm9/abimongo_
 
 > **write**(`message`): `void`
 
-Defined in: [transports/fileTransport.ts:9](https://github.com/NodEm9/abimongo_utils/blob/62e08380578108b0497622fb9a13efb3beac383a/src/transports/fileTransport.ts#L9)
+Defined in: [transports/fileTransport.ts:9](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/transports/fileTransport.ts#L9)
 
 #### Parameters
 

@@ -1,9 +1,9 @@
 {
   "name": "abimongo_utils",
   "version": "0.4.0",
-  "main": "dist/abimongo-utils.js",
-  "module": "dist/abimongo-utils.js",
-  "typings": "dist/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "type": "module",
+  "typings": "./dist/esm/index.d.ts",
   "files": [
     "dist/"
   ],
@@ -11,19 +11,19 @@
     "async_hooks": false
   },
   "repository": {
-    "type": "git",
-    "url": ""
+    "type": "git"
   },
   "exports": {
     ".": {
-      "require": "./dist/abimongo-utils.js",
-      "import": "./dist/abimongo-utils.js"
+     "import": "./dist/esm/index.js",
+     "require": "./dist/cjs/index.js"
     },
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "webpack --config webpack.config.js",
-    "build:watch": "webpack --config webpack.config.js --watch",
+    "build:esm": "tsc --project tsconfig.esm.json",
+    "build:cjs": "tsc --project tsconfig.cjs.json",
+    "build": "npm run build:esm && npm run build:cjs",
     "test": "jest --detectOpenHandles --coverage",
     "test:watch": "tsc --noEmit && jest --watch",
     "docs": "typedoc --out docs src/index.ts",
@@ -33,6 +33,7 @@
     "major:version": "npm version major",
     "prepublishOnly": "npm run clean && npm run build && npm run docs"
   },
+  "sideEffects": false,
   "keywords": [
     "abimongo_utils",
     "logger",
@@ -79,6 +80,12 @@
     "chalk": "^4.1.2",
     "streamroller": "^3.1.5"
   },
+  "browserslist": [
+    ">0.5%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead"
+  ],
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=8.0.0"
