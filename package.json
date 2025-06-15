@@ -34,7 +34,7 @@
     "prepare": "npm run clean",
     "patch:version": "npm version patch",
     "minor:version": "npm version minor",
-    "major:version": "npm version major",
+    "major:version": "npm version major", 
     "publish": "npm publish --access public",
     "prepublishOnly": "npm test"
   },
