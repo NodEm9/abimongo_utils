@@ -45,11 +45,11 @@ module.exports = {
 		// "sideEffects": true,
 		// "mangleExports": "size",
 	},
-	externals: [/^streamroller\/.+$/],
+	externals: {},
 	plugins: [
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify('production'),
-			'process.env.TS_NODE': JSON.stringify(VERSION),
+			// 'process.env.TS_NODE': JSON.stringify(VERSION),
 		}),
 		new webpack.ProvidePlugin({
 			window: path.resolve(__dirname, 'shim/window.js')

@@ -1,5 +1,5 @@
 // src/transporters/FileTransporter.ts
-import fs from 'fs';
+import * as fs from 'fs';
 import { now } from '../utils/timeUtils';
 import { Transporter, LogLevel, LogTransport, LogEntry } from '../types/logger.types';
 

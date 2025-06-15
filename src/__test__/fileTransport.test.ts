@@ -1,5 +1,5 @@
 import { FileTransporter } from "../transports";
-import fs from "fs";
+import * as fs from "fs";
 
 describe("FileTransporter", () => {
 	let transporter: FileTransporter;

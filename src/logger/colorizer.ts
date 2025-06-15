@@ -1,4 +1,4 @@
-import chalk from "chalk";
+import * as  chalk from 'chalk';
 
 export function colorByLevel(level: string, message: string): string {
   switch (level) {
