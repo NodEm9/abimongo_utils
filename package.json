@@ -10,7 +10,6 @@
   "browser": {
     "async_hooks": false
   },
-  "sideEffects": true,
   "repository": {
     "type": "git",
     "url": ""

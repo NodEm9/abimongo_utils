@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { createCircuitBreaker, retryWithBackoff } from "../utils";
 import { RemoteTransporter } from "../types";
-
+import { createRotatingFileTransporter } from './rotating.transporter';
 
 export const createHttpTransport = (url: string): RemoteTransporter => {
 	return async (message, meta) => {

@@ -41,8 +41,8 @@ module.exports = {
 	},
 	optimization: {
 		providedExports: true,
-		usedExports: true,		
-		"sideEffects": true,
+		// usedExports: true,		
+		// "sideEffects": true,
 		// "mangleExports": "size",
 	},
 	externals: [/^streamroller\/.+$/],
