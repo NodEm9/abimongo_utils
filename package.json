@@ -10,11 +10,7 @@
   "browser": {
     "async_hooks": false
   },
-  "sideEffects": [
-    "*.js",
-    "*.ts",
-    "*.d.ts"
-  ],
+  "sideEffects": true,
   "repository": {
     "type": "git",
     "url": ""
@@ -35,7 +31,8 @@
     "clean": "rimraf dist",
     "patch:version": "npm version patch",
     "minor:version": "npm version minor",
-    "major:version": "npm version major"
+    "major:version": "npm version major",
+    "prepublishOnly": "npm run clean && npm run build && npm run docs"
   },
   "keywords": [
     "abimongo_utils",
