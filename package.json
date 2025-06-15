@@ -1,6 +1,6 @@
 {
   "name": "abimongo_utils",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "main": "dist/abimongo-utils.js",
   "module": "dist/abimongo-utils.js",
   "typings": "dist/index.d.ts",
@@ -34,7 +34,7 @@
     "prepare": "npm run clean",
     "patch:version": "npm version patch",
     "minor:version": "npm version minor",
-    "major:version": "npm version major", 
+    "major:version": "npm version major",
     "publish": "npm publish --access public",
     "prepublishOnly": "npm test"
   },
