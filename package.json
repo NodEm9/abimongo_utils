@@ -34,7 +34,7 @@
     "patch:version": "npm version patch",
     "minor:version": "npm version minor",
     "major:version": "npm version major",
-    "publish": "npm publish --access public"
+    "publish": "npm publish"
   },
   "keywords": [
     "abimongo_utils",
