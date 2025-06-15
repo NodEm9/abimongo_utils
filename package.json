@@ -1,6 +1,6 @@
 {
   "name": "abimongo_utils",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "main": "./dist/cjs/index.js",
   "type": "module",
   "typings": "./dist/esm/index.d.ts",
@@ -15,8 +15,8 @@
   },
   "exports": {
     ".": {
-     "import": "./dist/esm/index.js",
-     "require": "./dist/cjs/index.js"
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
     },
     "./package.json": "./package.json"
   },
