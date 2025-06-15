@@ -35,17 +35,27 @@ module.exports = {
 		byDependency: {
 			esm: {
 				mainFields: ['browser', 'module', 'main'],
-			}
+			},
+			commonjs: {
+				mainFields: ['browser', 'main'],
+			},
 		},
 		plugins: [new TsconfigPathsPlugin()],
 	},
 	optimization: {
 		providedExports: true,
-		usedExports: true,		
-		"sideEffects": true,
+		usedExports: false,
+		"sideEffects": false,
 		// "mangleExports": "size",
 	},
-	externals: {},
+	externals: {
+		'streamroller': {
+			commonjs: 'streamroller',
+			commonjs2: 'streamroller',
+			amd: 'streamroller',
+			root: 'streamroller'
+		},
+	},
 	plugins: [
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify('production'),
