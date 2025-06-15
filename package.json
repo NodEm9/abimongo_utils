@@ -5,7 +5,7 @@
   "module": "dist/abimongo-utils.js",
   "typings": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist/"
   ],
   "browser": {
     "async_hooks": false
@@ -31,7 +31,6 @@
     "test:watch": "tsc --noEmit && jest --watch",
     "docs": "typedoc --out docs src/index.ts",
     "clean": "rimraf dist",
-    "prepare": "npm run clean",
     "patch:version": "npm version patch",
     "minor:version": "npm version minor",
     "major:version": "npm version major",
