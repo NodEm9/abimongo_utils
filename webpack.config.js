@@ -11,14 +11,12 @@ module.exports = {
 	output: {
 		filename: "abimongo-utils.js",
 		path: path.resolve(__dirname, "dist"),
+		globalObject: "this",
 		library: {
-			type: "module",
+			name: "abimongo_utils",
+			type: "umd",
 		},
-		module: true,
 		clean: true,
-	},
-	experiments: {
-		outputModule: true,
 	},
 	module: {
 		rules: [
@@ -44,13 +42,10 @@ module.exports = {
 	},
 	optimization: {
 		providedExports: true,
-		usedExports: false,
 		"sideEffects": false,
-		// "mangleExports": "size",
+		"mangleExports": "size",
 	},
-	externals: {
-		streamroller: 'commonjs2 streamroller'
-	},
+	externals: [/^streamroller\/.+$/],
 	plugins: [
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify('production'),
