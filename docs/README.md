@@ -1,8 +1,8 @@
-**abimongo_utils v0.4.0**
+**abimongo_utils v1.1.0**
 
 ***
 
-# abimongo_utils v0.4.0
+# abimongo_utils v1.1.0
 
 ## Classes
 
@@ -43,14 +43,16 @@
 - [consoleTransport](functions/consoleTransport.md)
 - [createCircuitBreaker](functions/createCircuitBreaker.md)
 - [createElasticTransport](functions/createElasticTransport.md)
+- [createFileTransport](functions/createFileTransport.md)
+- [createFileTransporter](functions/createFileTransporter.md)
 - [createHttpTransport](functions/createHttpTransport.md)
 - [createLogger](functions/createLogger.md)
 - [createLokiTransport](functions/createLokiTransport.md)
 - [createResilientTransporter](functions/createResilientTransporter.md)
-- [createRotatingFileTransporter](functions/createRotatingFileTransporter.md)
 - [formatConsole](functions/formatConsole.md)
 - [formatError](functions/formatError.md)
 - [formatJSON](functions/formatJSON.md)
+- [formatLog](functions/formatLog.md)
 - [formatMessage](functions/formatMessage.md)
 - [getLogLevel](functions/getLogLevel.md)
 - [getLogLevelPriority](functions/getLogLevelPriority.md)

@@ -1,4 +1,4 @@
-[**abimongo_utils v0.4.0**](../README.md)
+[**abimongo_utils v1.1.0**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Interface: AsyncBatchTransporterOptions
 
-Defined in: [types/logger.types.ts:48](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/logger.types.ts#L48)
+Defined in: [types/logger.types.ts:49](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/types/logger.types.ts#L49)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [types/logger.types.ts:48](https://github.com/NodEm9/abimongo_utils/
 
 > `optional` **batchSize**: `number`
 
-Defined in: [types/logger.types.ts:49](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/logger.types.ts#L49)
+Defined in: [types/logger.types.ts:50](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/types/logger.types.ts#L50)
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: [types/logger.types.ts:49](https://github.com/NodEm9/abimongo_utils/
 
 > `optional` **flushInterval**: `number`
 
-Defined in: [types/logger.types.ts:50](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/logger.types.ts#L50)
+Defined in: [types/logger.types.ts:51](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/types/logger.types.ts#L51)
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: [types/logger.types.ts:50](https://github.com/NodEm9/abimongo_utils/
 
 > **sendBatch**: (`entries`) => `Promise`\<`void`\>
 
-Defined in: [types/logger.types.ts:51](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/logger.types.ts#L51)
+Defined in: [types/logger.types.ts:52](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/types/logger.types.ts#L52)
 
 #### Parameters
 

@@ -1,4 +1,4 @@
-[**abimongo_utils v0.4.0**](../README.md)
+[**abimongo_utils v1.1.0**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Class: BufferedTransporter
 
-Defined in: [transports/buffered.transporter.ts:10](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/transports/buffered.transporter.ts#L10)
+Defined in: [transports/buffered.transporter.ts:10](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/transports/buffered.transporter.ts#L10)
 
 ## Constructors
 
@@ -14,7 +14,7 @@ Defined in: [transports/buffered.transporter.ts:10](https://github.com/NodEm9/ab
 
 > **new BufferedTransporter**(`transporter`, `options?`): `BufferedTransporter`
 
-Defined in: [transports/buffered.transporter.ts:17](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/transports/buffered.transporter.ts#L17)
+Defined in: [transports/buffered.transporter.ts:17](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/transports/buffered.transporter.ts#L17)
 
 #### Parameters
 
@@ -44,7 +44,7 @@ Defined in: [transports/buffered.transporter.ts:17](https://github.com/NodEm9/ab
 
 > **flush**(): `void`
 
-Defined in: [transports/buffered.transporter.ts:40](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/transports/buffered.transporter.ts#L40)
+Defined in: [transports/buffered.transporter.ts:40](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/transports/buffered.transporter.ts#L40)
 
 #### Returns
 
@@ -56,7 +56,7 @@ Defined in: [transports/buffered.transporter.ts:40](https://github.com/NodEm9/ab
 
 > **stop**(): `void`
 
-Defined in: [transports/buffered.transporter.ts:54](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/transports/buffered.transporter.ts#L54)
+Defined in: [transports/buffered.transporter.ts:54](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/transports/buffered.transporter.ts#L54)
 
 #### Returns
 
@@ -68,7 +68,7 @@ Defined in: [transports/buffered.transporter.ts:54](https://github.com/NodEm9/ab
 
 > **write**(`level`, `message`, `meta`): `void`
 
-Defined in: [transports/buffered.transporter.ts:27](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/transports/buffered.transporter.ts#L27)
+Defined in: [transports/buffered.transporter.ts:27](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/transports/buffered.transporter.ts#L27)
 
 #### Parameters
 

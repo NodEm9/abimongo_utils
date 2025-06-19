@@ -1,4 +1,4 @@
-[**abimongo_utils v0.4.0**](../README.md)
+[**abimongo_utils v1.1.0**](../README.md)
 
 ***
 
@@ -8,7 +8,7 @@
 
 > **AbimongoConfig** = `object`
 
-Defined in: [types/abimongoConfig.ts:10](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/abimongoConfig.ts#L10)
+Defined in: [types/abimongoConfig.ts:11](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/types/abimongoConfig.ts#L11)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [types/abimongoConfig.ts:10](https://github.com/NodEm9/abimongo_util
 
 > `optional` **circuitBreaker**: `object`
 
-Defined in: [types/abimongoConfig.ts:11](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/abimongoConfig.ts#L11)
+Defined in: [types/abimongoConfig.ts:12](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/types/abimongoConfig.ts#L12)
 
 #### enabled?
 

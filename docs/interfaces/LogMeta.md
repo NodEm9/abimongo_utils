@@ -1,4 +1,4 @@
-[**abimongo_utils v0.4.0**](../README.md)
+[**abimongo_utils v1.1.0**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Interface: LogMeta
 
-Defined in: [types/logger.types.ts:25](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/logger.types.ts#L25)
+Defined in: [types/logger.types.ts:26](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/types/logger.types.ts#L26)
 
 ## Indexable
 

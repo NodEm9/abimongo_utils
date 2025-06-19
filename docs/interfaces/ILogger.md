@@ -1,4 +1,4 @@
-[**abimongo_utils v0.4.0**](../README.md)
+[**abimongo_utils v1.1.0**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Interface: ILogger
 
-Defined in: [types/logger.types.ts:1](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/logger.types.ts#L1)
+Defined in: [types/logger.types.ts:3](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/types/logger.types.ts#L3)
 
 ## Methods
 
@@ -14,7 +14,7 @@ Defined in: [types/logger.types.ts:1](https://github.com/NodEm9/abimongo_utils/b
 
 > **debug**(`message`, ...`meta`): `void`
 
-Defined in: [types/logger.types.ts:2](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/logger.types.ts#L2)
+Defined in: [types/logger.types.ts:4](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/types/logger.types.ts#L4)
 
 #### Parameters
 
@@ -36,7 +36,7 @@ Defined in: [types/logger.types.ts:2](https://github.com/NodEm9/abimongo_utils/b
 
 > **error**(`message`, ...`meta`): `void`
 
-Defined in: [types/logger.types.ts:5](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/logger.types.ts#L5)
+Defined in: [types/logger.types.ts:7](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/types/logger.types.ts#L7)
 
 #### Parameters
 
@@ -58,7 +58,7 @@ Defined in: [types/logger.types.ts:5](https://github.com/NodEm9/abimongo_utils/b
 
 > **info**(`message`, ...`meta`): `void`
 
-Defined in: [types/logger.types.ts:3](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/logger.types.ts#L3)
+Defined in: [types/logger.types.ts:5](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/types/logger.types.ts#L5)
 
 #### Parameters
 
@@ -80,7 +80,7 @@ Defined in: [types/logger.types.ts:3](https://github.com/NodEm9/abimongo_utils/b
 
 > **trace**(`message`, ...`meta`): `void`
 
-Defined in: [types/logger.types.ts:6](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/logger.types.ts#L6)
+Defined in: [types/logger.types.ts:8](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/types/logger.types.ts#L8)
 
 #### Parameters
 
@@ -102,7 +102,7 @@ Defined in: [types/logger.types.ts:6](https://github.com/NodEm9/abimongo_utils/b
 
 > **warn**(`message`, ...`meta`): `void`
 
-Defined in: [types/logger.types.ts:4](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/logger.types.ts#L4)
+Defined in: [types/logger.types.ts:6](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/types/logger.types.ts#L6)
 
 #### Parameters
 

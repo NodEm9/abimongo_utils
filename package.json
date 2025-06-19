@@ -28,8 +28,7 @@
     "clean": "rimraf dist",
     "patch:version": "npm version patch",
     "minor:version": "npm version minor",
-    "major:version": "npm version major",
-    "prepublishOnly": "npm run clean && npm run build && npm run test"
+    "major:version": "npm version major"
   },
   "keywords": [
     "abimongo_utils",

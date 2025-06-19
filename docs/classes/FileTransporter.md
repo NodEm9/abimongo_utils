@@ -1,4 +1,4 @@
-[**abimongo_utils v0.4.0**](../README.md)
+[**abimongo_utils v1.1.0**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Class: FileTransporter
 
-Defined in: [transports/fileTransport.ts:6](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/transports/fileTransport.ts#L6)
+Defined in: [transports/fileTransport.ts:6](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/transports/fileTransport.ts#L6)
 
 ## Implements
 
@@ -18,7 +18,7 @@ Defined in: [transports/fileTransport.ts:6](https://github.com/NodEm9/abimongo_u
 
 > **new FileTransporter**(`stream`): `FileTransporter`
 
-Defined in: [transports/fileTransport.ts:7](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/transports/fileTransport.ts#L7)
+Defined in: [transports/fileTransport.ts:7](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/transports/fileTransport.ts#L7)
 
 #### Parameters
 
@@ -30,13 +30,25 @@ Defined in: [transports/fileTransport.ts:7](https://github.com/NodEm9/abimongo_u
 
 `FileTransporter`
 
+## Properties
+
+### stream
+
+> **stream**: `WriteStream`
+
+Defined in: [transports/fileTransport.ts:7](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/transports/fileTransport.ts#L7)
+
+#### Implementation of
+
+[`Transporter`](../interfaces/Transporter.md).[`stream`](../interfaces/Transporter.md#stream)
+
 ## Methods
 
 ### log()
 
 > **log**(`level`, `message`, `meta`): `void`
 
-Defined in: [transports/fileTransport.ts:14](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/transports/fileTransport.ts#L14)
+Defined in: [transports/fileTransport.ts:12](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/transports/fileTransport.ts#L12)
 
 #### Parameters
 
@@ -56,17 +68,13 @@ Defined in: [transports/fileTransport.ts:14](https://github.com/NodEm9/abimongo_
 
 `void`
 
-#### Implementation of
-
-[`Transporter`](../interfaces/Transporter.md).[`log`](../interfaces/Transporter.md#log)
-
 ***
 
 ### write()
 
 > **write**(`message`): `void`
 
-Defined in: [transports/fileTransport.ts:9](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/transports/fileTransport.ts#L9)
+Defined in: [transports/fileTransport.ts:8](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/transports/fileTransport.ts#L8)
 
 #### Parameters
 

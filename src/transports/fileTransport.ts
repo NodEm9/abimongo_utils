@@ -26,11 +26,22 @@ export const formatLog = (entry: LogEntry) => {
   return `[${timestamp}] - ${level.toUpperCase()}: ${message}${formattedMeta}`;
 };
 
+/**
+ * Creates a file transport for logging.
+ * @param filePath The path to the file where logs will be written.
+ * @returns 
+ */
 export const createFileTransport = (filePath: string): FileTransporter => {
   const stream = fs.createWriteStream(filePath, { flags: 'a' });
   return new FileTransporter(stream);
 }
 
+/**
+ *  Creates a file transporter that can be used to log messages.
+ *  This is a convenience function that wraps the FileTransporter.
+ * @param filePath The path to the file where logs will be written.
+ * @returns 
+ */
 export const createFileTransporter = (filePath: string) => {
   const fileTransporter = createFileTransport(filePath);
   return {

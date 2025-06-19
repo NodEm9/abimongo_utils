@@ -1,4 +1,4 @@
-[**abimongo_utils v0.4.0**](../README.md)
+[**abimongo_utils v1.1.0**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Class: AsyncBatchTransporter
 
-Defined in: [transports/async-batch.transporter.ts:11](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/transports/async-batch.transporter.ts#L11)
+Defined in: [transports/async-batch.transporter.ts:11](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/transports/async-batch.transporter.ts#L11)
 
 ## Constructors
 
@@ -14,13 +14,13 @@ Defined in: [transports/async-batch.transporter.ts:11](https://github.com/NodEm9
 
 > **new AsyncBatchTransporter**(`options`): `AsyncBatchTransporter`
 
-Defined in: [transports/async-batch.transporter.ts:18](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/transports/async-batch.transporter.ts#L18)
+Defined in: [transports/async-batch.transporter.ts:19](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/transports/async-batch.transporter.ts#L19)
 
 #### Parameters
 
 ##### options
 
-[`AsyncBatchTransporterOptions`](../interfaces/AsyncBatchTransporterOptions.md)
+[`AsyncBatchTransporterOptions`](../interfaces/AsyncBatchTransporterOptions.md) & `object`
 
 #### Returns
 
@@ -32,7 +32,7 @@ Defined in: [transports/async-batch.transporter.ts:18](https://github.com/NodEm9
 
 > **flush**(): `Promise`\<`void`\>
 
-Defined in: [transports/async-batch.transporter.ts:41](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/transports/async-batch.transporter.ts#L41)
+Defined in: [transports/async-batch.transporter.ts:44](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/transports/async-batch.transporter.ts#L44)
 
 #### Returns
 
@@ -44,7 +44,7 @@ Defined in: [transports/async-batch.transporter.ts:41](https://github.com/NodEm9
 
 > **log**(`level`, `message`, `meta`): `void`
 
-Defined in: [transports/async-batch.transporter.ts:26](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/transports/async-batch.transporter.ts#L26)
+Defined in: [transports/async-batch.transporter.ts:28](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/transports/async-batch.transporter.ts#L28)
 
 #### Parameters
 
@@ -70,7 +70,7 @@ Defined in: [transports/async-batch.transporter.ts:26](https://github.com/NodEm9
 
 > **stop**(): `void`
 
-Defined in: [transports/async-batch.transporter.ts:57](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/transports/async-batch.transporter.ts#L57)
+Defined in: [transports/async-batch.transporter.ts:60](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/transports/async-batch.transporter.ts#L60)
 
 #### Returns
 

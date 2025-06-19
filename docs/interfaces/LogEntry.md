@@ -1,4 +1,4 @@
-[**abimongo_utils v0.4.0**](../README.md)
+[**abimongo_utils v1.1.0**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Interface: LogEntry
 
-Defined in: [types/logger.types.ts:29](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/logger.types.ts#L29)
+Defined in: [types/logger.types.ts:30](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/types/logger.types.ts#L30)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [types/logger.types.ts:29](https://github.com/NodEm9/abimongo_utils/
 
 > **level**: [`LogLevel`](../type-aliases/LogLevel.md)
 
-Defined in: [types/logger.types.ts:31](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/logger.types.ts#L31)
+Defined in: [types/logger.types.ts:32](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/types/logger.types.ts#L32)
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: [types/logger.types.ts:31](https://github.com/NodEm9/abimongo_utils/
 
 > **message**: `string`
 
-Defined in: [types/logger.types.ts:32](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/logger.types.ts#L32)
+Defined in: [types/logger.types.ts:33](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/types/logger.types.ts#L33)
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: [types/logger.types.ts:32](https://github.com/NodEm9/abimongo_utils/
 
 > **meta**: [`LogMeta`](LogMeta.md)
 
-Defined in: [types/logger.types.ts:33](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/logger.types.ts#L33)
+Defined in: [types/logger.types.ts:34](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/types/logger.types.ts#L34)
 
 ***
 
@@ -38,4 +38,4 @@ Defined in: [types/logger.types.ts:33](https://github.com/NodEm9/abimongo_utils/
 
 > **timestamp**: `string`
 
-Defined in: [types/logger.types.ts:30](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/types/logger.types.ts#L30)
+Defined in: [types/logger.types.ts:31](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/types/logger.types.ts#L31)

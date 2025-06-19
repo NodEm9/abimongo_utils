@@ -1,4 +1,4 @@
-[**abimongo_utils v0.4.0**](../README.md)
+[**abimongo_utils v1.1.0**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Class: Logger
 
-Defined in: [logger/setupLogger.ts:17](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/logger/setupLogger.ts#L17)
+Defined in: [logger/setupLogger.ts:17](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/logger/setupLogger.ts#L17)
 
 ## Constructors
 
@@ -14,7 +14,7 @@ Defined in: [logger/setupLogger.ts:17](https://github.com/NodEm9/abimongo_utils/
 
 > **new Logger**(): `Logger`
 
-Defined in: [logger/setupLogger.ts:25](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/logger/setupLogger.ts#L25)
+Defined in: [logger/setupLogger.ts:25](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/logger/setupLogger.ts#L25)
 
 #### Returns
 
@@ -28,7 +28,7 @@ Defined in: [logger/setupLogger.ts:25](https://github.com/NodEm9/abimongo_utils/
 
 > **get** `static` **instance**(): [`ILogger`](../interfaces/ILogger.md)
 
-Defined in: [logger/setupLogger.ts:19](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/logger/setupLogger.ts#L19)
+Defined in: [logger/setupLogger.ts:19](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/logger/setupLogger.ts#L19)
 
 ##### Returns
 
@@ -40,7 +40,7 @@ Defined in: [logger/setupLogger.ts:19](https://github.com/NodEm9/abimongo_utils/
 
 > `static` **initialize**(`config`): `void`
 
-Defined in: [logger/setupLogger.ts:28](https://github.com/NodEm9/abimongo_utils/blob/a65cd6462ac155e030ff8f62ef498bb805490cbf/src/logger/setupLogger.ts#L28)
+Defined in: [logger/setupLogger.ts:28](https://github.com/NodEm9/abimongo_utils/blob/ee68e61821a92d10b78d3ea90016374fc2d4aef0/src/logger/setupLogger.ts#L28)
 
 #### Parameters
 
