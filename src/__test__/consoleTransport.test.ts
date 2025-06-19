@@ -8,21 +8,21 @@ describe("consoleTransport", () => {
 		jest.clearAllMocks();
 	});
 
-	it("should have property log", () => {
+	it("should have property write", () => {
 		const transport = consoleTransport(true);
-		expect(transport).toHaveProperty("log");
+		expect(transport).toHaveProperty("write");
 	});
 
-	it("should log messages to the console with color", () => {
+	it("should write messages to the console with color", () => {
 		const transport = consoleTransport(false);
 		const color = { blue: (text: string) => text }
-		let logMessageWithColor = transport.log("info", "Test message 1");
+		let logMessageWithColor = transport.write("Test message 1");
 		const msgColor = color.blue(`${logMessageWithColor}`);
 		expect(msgColor).toBe(logMessageWithColor);
 	});
 
-	it("should log messages with metadata", () => {
+	it("should write messages with metadata", () => {
 		const transport = consoleTransport(true);
-		expect(transport.log).toHaveLength(2)
+		expect(transport.write).toHaveLength(1)
 	});
 });

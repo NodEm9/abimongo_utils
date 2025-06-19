@@ -1,3 +1,5 @@
+import { WriteStream } from "fs";
+
 export interface ILogger {
   debug(message: string, ...meta: any[]): void;
   info(message: string, ...meta: any[]): void;
@@ -10,13 +12,12 @@ export interface ILogger {
 export type LogLevel = 'debug' | 'info' | 'warn' | 'error' | 'fatal' | 'trace';
 
 export interface Transporter {
-  write: (message: string) => void;
-  log(level: LogLevel, message: string, meta?: LogMeta[]): void;
+  write: (chunk: string)  => void;
+  stream?: WriteStream; // Optional stream for file transports
 }
 
 export interface LoggerTransporter {
-  write: (message: string) => void;
-  // log?: LogTransport
+  write: (chunk: string) => void;
 }
 
 export type RemoteTransporter =

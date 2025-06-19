@@ -14,21 +14,24 @@ export class AsyncBatchTransporter {
   private readonly flushInterval: number;
   private readonly sendBatch: (entries: LogEntry[]) => Promise<void>;
   private timer?: NodeJS.Timeout;
+  private readonly tag?: string;
 
-  constructor(options: AsyncBatchTransporterOptions) {
+  constructor(options: AsyncBatchTransporterOptions & { tag?: string }) {
     this.batchSize = options.batchSize || 10;
     this.flushInterval = options.flushInterval || 5000;
     this.sendBatch = options.sendBatch;
+    this.tag = options.tag;
 
     this.start();
   }
 
   public log(level: LogLevel, message: string, meta: any[]) {
+    const enrichedMeta = this.tag ? [...meta, { type: this.tag }] : meta;
     this.buffer.push({
       timestamp: now(),
       level,
       message,
-      meta,
+      meta: enrichedMeta,
     });
 
     // Check if the buffer has reached the batch size

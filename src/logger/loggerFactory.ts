@@ -26,7 +26,7 @@ export function createLogger(config: LoggerConfig, abimongoConfig?: AbimongoConf
 	const writeToTransports = (level: string, formatted: string) => {
 		transports.map((t) => {
 			try {
-				if ('write' in t) t.write(formatted)
+				if ('write' in t) t.write(formatted) // If the transport has a write method, use it
 				// else ('log' in t) && t.log?.(level, formatted);
 			} catch (error) {
 				hooks?.onError?.(error)
