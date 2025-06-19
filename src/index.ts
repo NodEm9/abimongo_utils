@@ -19,7 +19,11 @@ export { createLogger } from './logger';
 export { DefaultLogger } from './logger/defaultLogger';
 export { createRotatingFileTransporter } from './transports/rotating.transporter';
 export { consoleTransport } from './transports/consoleTransport';
-export { FileTransporter } from './transports/fileTransport';
+export {
+	FileTransporter,
+	createFileTransporter,
+	createFileTransport
+} from './transports/fileTransport';
 export { AsyncBatchTransporter } from './transports/async-batch.transporter';
 export { BufferedTransporter } from './transports/buffered.transporter';
 export { createResilientTransporter } from './transports/remote.transport';
