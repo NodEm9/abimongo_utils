@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es2022",
     "lib": [
-      "ES6",
+      "ES2022",
       "DOM"
     ],
     "module": "commonjs",
-    // "moduleResolution": "node",
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
