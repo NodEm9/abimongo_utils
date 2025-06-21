@@ -5,8 +5,10 @@ import {
 	LoggerHooks,
 	LogLevel,
 	ILogger,
+	Transporter,
 } from "./logger.types";
 import { RemoteTransporter } from '../types';
+import Stream from 'stream';
 
 export type AbimongoConfig = {
 	circuitBreaker?: {
@@ -21,7 +23,7 @@ export interface LoggerConfig {
 	level?: LogLevel;
 	colorize?: boolean;
 	json?: boolean;
-	transports?: Array<fs.WriteStream | RemoteTransporter>;
+	transports?: Array<Transporter | RemoteTransporter>;
 	excludedSources?: string[];
 	formatOptions?: LoggerFormatOptions;
 	hooks?: LoggerHooks;

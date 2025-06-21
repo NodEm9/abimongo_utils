@@ -17,6 +17,7 @@ import { RotatingFileTransporterOptions } from '../types/logger.types';
     maxSize,
     backups,
     compress: false,
+    encoding: 'utf8',
   });
 
   return {

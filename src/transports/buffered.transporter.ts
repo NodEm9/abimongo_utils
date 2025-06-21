@@ -1,3 +1,4 @@
+import { Transporter } from "../types";
 
 type BufferedLogEntry = {
   timestamp: string;
@@ -7,14 +8,15 @@ type BufferedLogEntry = {
 };
 
 
-export class BufferedTransporter {
+export class BufferedTransporter implements Transporter  {
   private buffer: BufferedLogEntry[] = [];
   private readonly flushInterval: number;
   private readonly flushSize: number;
   private readonly transporter: { write: (message: string) => void };
   private timer?: NodeJS.Timeout;
 
-  constructor(transporter: { write: (message: string) => void }, options?: {
+  constructor(
+    transporter: { write: (message: string) => void }, options?: {
     flushInterval?: number; // in milliseconds
     flushSize?: number;     // number of entries before auto flush
   }) {
@@ -24,12 +26,12 @@ export class BufferedTransporter {
     this.startAutoFlush();
   }
  
-  public write(level: string, message: string, meta: any[]) {
+  public write(message: string, level?: string, meta?: any[]) {
     this.buffer.push({
       timestamp: new Date().toISOString(),
-      level,
       message,
-      meta,
+      level: level || 'info',
+      meta: meta || [],
     });
 
     if (this.buffer.length >= this.flushSize) {
