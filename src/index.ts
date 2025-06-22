@@ -14,5 +14,6 @@ if (typeof window !== 'undefined') {
 
 export * from './logger';
 export * from './transports'
+export * from './transports/rotating.transporter';
 export * from './types';
 export * from './utils';

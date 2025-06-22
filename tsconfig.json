@@ -1,17 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es2019",
-    // "lib": [
-    //   "ES2020",
-    //   "DOM"
-    // ],
-    "moduleDetection": "force",
-    "module": "esnext",
+    "target": "es2020",
+    "lib": [
+      "ES2020",
+      "DOM"
+    ],
+    "moduleDetection": "auto",
+    "module": "commonjs",
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    // "forceConsistentCasingInFileNames": true,
-    // "isolatedModules": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "strict": true,

@@ -5,15 +5,15 @@ const { TsconfigPathsPlugin } = require('tsconfig-paths-webpack-plugin');
 const { VERSION } = require('ts-node');
 
 module.exports = {
+	mode: "production",
 	entry: "./src/index.ts",
 	target: "node",
-	mode: "production",
 	output: {
 		filename: "abimongo-utils.js",
 		path: path.resolve(__dirname, "dist"),
 		library: {
 			name: "abimongo_utils",
-			type: "umd",
+			type: "commonjs2", // Use commonjs2 for Node.js compatibility
 		},
 		clean: true,
 	},
@@ -32,29 +32,24 @@ module.exports = {
 	},
 	resolve: {
 		extensions: ['.js', '.ts'],
-		byDependency: {
-			esm: {
-				mainFields: ['browser', 'module', 'main'],
-			},
-			commonjs: {
-				mainFields: ['browser', 'main'],
-			},
-		},
+		// byDependency: {
+		// 	esm: {
+		// 		mainFields: ['browser', 'module', 'main'],
+		// 	},
+		// 	commonjs2: {
+		// 		mainFields: ['browser', 'main'],
+		// 	},
+		// },
 		plugins: [new TsconfigPathsPlugin()],
 	},
 	optimization: {
 		providedExports: true,
 		usedExports: false,
 		"sideEffects": false,
-		// "mangleExports": "size",
+		// "mangleExports": "false",
 	},
 	externals: {
-		'streamroller': {
-			commonjs: 'streamroller',
-			commonjs2: 'streamroller',
-			amd: 'streamroller',
-			root: 'streamroller'
-		},
+		 streamroller: 'commonjs streamroller', // Exclude streamroller from the bundle
 	},
 	plugins: [
 		new webpack.DefinePlugin({

@@ -1,11 +1,12 @@
-// rotating.transporter.ts
 import { DateRollingFileStream } from 'streamroller';
 import path from 'path';
 import { RotatingFileTransporterOptions } from '../types/logger.types';
 
 
 
- export function createRotatingFileTransporter(options?: RotatingFileTransporterOptions) {
+export function createRotatingFileTransporter(
+  options?: RotatingFileTransporterOptions
+): { write: (message: string) => void } {
   const {
     filename = path.join(__dirname, '../logs/abimongo.log'),
     frequency = 'daily',
