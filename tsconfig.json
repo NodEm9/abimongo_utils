@@ -8,7 +8,7 @@
     "moduleResolution": "node",
     "rootDir": "./src",
     "outDir": "./dist",
-    "declaration": true,
+    "declaration": true, 
     "declarationMap": true,
     "experimentalDecorators": true,
     "resolveJsonModule": true,
