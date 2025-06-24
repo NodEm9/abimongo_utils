@@ -20,7 +20,8 @@ export function createRotatingFileTransporter(
     compress: false,
   });
 
-  return {
-    write: (message: string) => stream.write(message),
-  };
+  const write = (message: string) => stream.write(message)
+  
+  return write
+  
 }
