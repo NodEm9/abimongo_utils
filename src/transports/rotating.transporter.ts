@@ -6,7 +6,7 @@ import { RotatingFileTransporterOptions } from '../types/logger.types';
 
 export function createRotatingFileTransporter(
   options?: RotatingFileTransporterOptions
-): { write: (message: string) => void } {
+) {
   const {
     filename = path.join(__dirname, '../logs/abimongo.log'),
     frequency = 'daily',
@@ -18,7 +18,6 @@ export function createRotatingFileTransporter(
     maxSize,
     backups,
     compress: false,
-    encoding: 'utf8',
   });
 
   return {

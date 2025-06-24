@@ -13,7 +13,8 @@ module.exports = {
 		path: path.resolve(__dirname, "dist"),
 		library: {
 			name: "abimongo_utils",
-			type: "commonjs2", // Use commonjs2 for Node.js compatibility
+			type: "umd", // Universal Module Definition
+			umdNamedDefine: true, // Named UMD module
 		},
 		clean: true,
 	},
@@ -32,14 +33,14 @@ module.exports = {
 	},
 	resolve: {
 		extensions: ['.js', '.ts'],
-		// byDependency: {
-		// 	esm: {
-		// 		mainFields: ['browser', 'module', 'main'],
-		// 	},
-		// 	commonjs2: {
-		// 		mainFields: ['browser', 'main'],
-		// 	},
-		// },
+		byDependency: {
+			esm: {
+				mainFields: ['browser', 'module', 'main'],
+			},
+			commonjs2: {
+				mainFields: ['browser', 'main'],
+			},
+		},
 		plugins: [new TsconfigPathsPlugin()],
 	},
 	optimization: {

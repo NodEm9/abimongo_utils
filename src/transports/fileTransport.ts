@@ -31,21 +31,7 @@ export const formatLog = (entry: LogEntry) => {
  * @param filePath The path to the file where logs will be written.
  * @returns 
  */
-export const createFileTransport = (filePath: string): FileTransporter => {
+export const createFileTransporter = (filePath: string): FileTransporter => {
   const stream = fs.createWriteStream(filePath, { flags: 'a' });
   return new FileTransporter(stream);
 }
-
-/**
- *  Creates a file transporter that can be used to log messages.
- *  This is a convenience function that wraps the FileTransporter.
- * @param filePath The path to the file where logs will be written.
- * @returns 
- */
-export const createFileTransporter = (filePath: string) => {
-  const fileTransporter = createFileTransport(filePath);
-  return {
-    write: (message: string) => fileTransporter.write(message),
-    log: (level: LogLevel, message: string, meta: any[] = []) => fileTransporter.log(level, message, meta)
-  };
-};
