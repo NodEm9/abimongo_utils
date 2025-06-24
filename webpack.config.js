@@ -49,9 +49,9 @@ module.exports = {
 		"sideEffects": false,
 		// "mangleExports": "false",
 	},
-	externals: {
-		 streamroller: 'commonjs streamroller', // Exclude streamroller from the bundle
-	},
+	// externals: {
+	// 	 streamroller: 'commonjs streamroller', // Exclude streamroller from the bundle
+	// },
 	plugins: [
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify('production'),

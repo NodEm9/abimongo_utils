@@ -2,8 +2,12 @@ import { DateRollingFileStream } from 'streamroller';
 import path from 'path';
 import { RotatingFileTransporterOptions } from '../types/logger.types';
 
-
-
+/**
+ * Creates a rotating file transporter for logging.
+ * 
+ * @param {RotatingFileTransporterOptions} options - Configuration options for the rotating file transporter.
+ * @returns {Function} A function that writes log messages to the rotating file.
+ */
 export function createRotatingFileTransporter(
   options?: RotatingFileTransporterOptions
 ) {
