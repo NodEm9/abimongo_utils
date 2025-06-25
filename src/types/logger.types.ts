@@ -15,7 +15,7 @@ export interface Transporter {
 }
 
 export interface LoggerTransporter {
-  write: (chunk: string) => void;
+  write: (message: string) => void;
 }
 
 export type RemoteTransporter =

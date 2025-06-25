@@ -8,14 +8,14 @@ module.exports = {
 	mode: "production",
 	entry: "./src/index.ts",
 	target: "node",
+	devtool: "source-map",
 	output: {
 		filename: "abimongo-utils.js",
 		path: path.resolve(__dirname, "dist"),
-		library: {
-			name: "abimongo_utils",
-			type: "umd", // Universal Module Definition
-			umdNamedDefine: true, // Named UMD module
-		},
+		library: "abimongo-utils",
+		libraryTarget: "umd",
+		umdNamedDefine: true,
+		globalObject: 'this',
 		clean: true,
 	},
 	module: {
@@ -38,7 +38,7 @@ module.exports = {
 				mainFields: ['browser', 'module', 'main'],
 			},
 			commonjs2: {
-				mainFields: ['browser', 'main'],
+				aliasFields: ['browser', 'module'],
 			},
 		},
 		plugins: [new TsconfigPathsPlugin()],
@@ -47,14 +47,12 @@ module.exports = {
 		providedExports: true,
 		usedExports: false,
 		"sideEffects": false,
-		// "mangleExports": "false",
+		"mangleExports": "size",
 	},
-	// externals: {
-	// 	 streamroller: 'commonjs streamroller', // Exclude streamroller from the bundle
-	// },
 	plugins: [
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify('production'),
+			// 'process.env.VERSION': JSON.stringify('1.0.0'),
 			'process.env.TS_NODE': JSON.stringify(VERSION),
 		}),
 		new webpack.ProvidePlugin({

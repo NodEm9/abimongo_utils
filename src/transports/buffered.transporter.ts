@@ -13,8 +13,8 @@ export class BufferedTransporter implements Transporter  {
   private readonly flushInterval: number;
   private readonly flushSize: number;
   private readonly transporter: { write: (message: string) => void };
-  private timer?: NodeJS.Timeout;
-
+  private timer?: NodeJS.Timeout; 
+  
   constructor(
     transporter: { write: (message: string) => void }, options?: {
     flushInterval?: number; // in milliseconds
