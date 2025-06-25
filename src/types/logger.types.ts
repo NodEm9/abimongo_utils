@@ -10,7 +10,7 @@ export interface ILogger {
 export type LogLevel = 'debug' | 'info' | 'warn' | 'error' | 'fatal' | 'trace';
 
 export interface Transporter {
-  write: (message: string, level?: string, meta?: any[])  => void;
+  write: (message: string, level?: LogLevel, meta?: any[])  => void;
 
 }
 
