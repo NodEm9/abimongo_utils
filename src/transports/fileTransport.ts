@@ -5,11 +5,12 @@ import { Transporter, LogLevel, LogTransport, LogEntry, LogMeta } from '../types
 
 export class FileTransporter implements Transporter {
   constructor(public stream: fs.WriteStream) { }
-  write(message: string): void {
+  write(message: string): Promise<void> {
     const formattedLog = formatLog({level: 'info', message, timestamp: now(), meta: []}); ;
     this.stream.write(formattedLog + '\n');
+    return Promise.resolve();
   }
-  log(level: LogLevel, message: string, meta: any[] = []): void {
+  log(level: LogLevel, message: string, meta: any[] = []): Promise<void> {
     const formattedLog = formatLog({
       level,
       message,
@@ -17,6 +18,7 @@ export class FileTransporter implements Transporter {
       meta
     });
     this.stream.write(formattedLog + '\n');
+    return Promise.resolve();
   }
 }
 

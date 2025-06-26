@@ -102,7 +102,7 @@ export function createLogger(config: LoggerConfig, abimongoConfig?: AbimongoConf
 			// Fire hooks
 			hooks?.onLog?.(metadata);
 		};
-	}
+	} 
 
 	return {
 		debug: log('debug'),

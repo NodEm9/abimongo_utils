@@ -26,7 +26,7 @@ export class BufferedTransporter implements Transporter  {
     this.startAutoFlush();
   }
  
-  public write(message: string, level?: string, meta?: any[]) {
+  public write(message: string, level?: string, meta?: any[]): Promise<void> {
     this.buffer.push({
       timestamp: new Date().toISOString(),
       message,
@@ -37,16 +37,22 @@ export class BufferedTransporter implements Transporter  {
     if (this.buffer.length >= this.flushSize) {
       this.flush();
     }
+    return Promise.resolve();
   }
 
-  public flush() {
-    if (this.buffer.length === 0) return;
+  public flush(): Promise<void> {
+    if (this.buffer.length === 0) return Promise.resolve();
 
     const entries = this.buffer.splice(0, this.buffer.length);
     for (const entry of entries) {
       const logLine = `${entry.timestamp} - ${entry.level.toUpperCase()}: ${entry.message} ${entry.meta}\n`;
       this.transporter.write(logLine);
     }
+    if (this.timer) {
+      clearInterval(this.timer);
+      this.startAutoFlush(); // Restart the timer after flushing
+    }
+    return Promise.resolve();
   }
 
   private startAutoFlush() {

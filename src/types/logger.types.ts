@@ -10,17 +10,18 @@ export interface ILogger {
 export type LogLevel = 'debug' | 'info' | 'warn' | 'error' | 'fatal' | 'trace';
 
 export interface Transporter {
-  write: (message: string, level?: LogLevel, meta?: any[])  => void;
-
+  write(message: string, level?: LogLevel, meta?: any[]): Promise<void>;
+  flush?(): Promise<void>;
+  close?(): void;
 }
 
 export interface LoggerTransporter {
-  write: (message: string) => void;
+  write(message: string): Promise<void>;
 }
 
 export type RemoteTransporter =
   (formattedMessage: string, meta: LogEntry) => Promise<void>;
-  
+
 export interface LogMeta {
   [key: string]: any;
 }
@@ -56,9 +57,3 @@ export interface LoggerHooks {
   onError?: (error: any, entry?: LogEntry | LogEntry[]) => void;
 }
 
-export interface RotatingFileTransporterOptions {
-  filename?: string;
-  frequency?: string; 
-  maxSize?: number;
-  backups?: number;
-}
