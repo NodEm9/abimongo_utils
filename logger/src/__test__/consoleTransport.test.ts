@@ -27,6 +27,6 @@ describe("consoleTransport", () => {
 
 	it("should write messages with metadata", async () => {
 		const transport = consoleTransport(true);
-		await expect(transport.write).toHaveLength(2)
+		await expect(transport.write).toHaveLength(2) 
 	});
 });
