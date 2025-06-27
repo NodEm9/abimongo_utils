@@ -34,20 +34,16 @@ class AbimongoLogger {
     this.options.baseLogPath ||= path.join(__dirname, '../logs');
     this.options.format ||= 'text';
 
+    if (process.env.NODE_ENV !== 'test') {
+      this.startMetricsTracking();
+    }
 
-    setInterval(() => {
-      this.metrics.logsPerMinute = this.logsLastMinute;
-      this.logsLastMinute = 0;
-      this.metrics.flushedBuffers = 0; // Reset after reporting
-      this.metrics.rotations = 0; // Reset after reporting
-      console.log('Metrics:', this.metrics);
-    }, 60_000);
   }
 
   async log(message: string, level: LogLevel = 'info', meta: LogMeta = {}) {
     const tenantId = meta.tenantId || 'default';
     const filename = path.join(this.options.baseLogPath!, `${tenantId}.log`);
-    const formatted = formatMsg(message, level, [this.options.format] );
+    const formatted = formatMsg(message, level, [this.options.format]);
 
     let transport = this.transports.get(tenantId);
     if (!transport) {
@@ -74,6 +70,16 @@ class AbimongoLogger {
     this.logsLastMinute++;
 
     console.log(`[${new Date().toISOString()}] [${level}] [${tenantId}] ${formatted}`);
+  }
+
+  private startMetricsTracking() {
+    setInterval(() => {
+      this.metrics.logsPerMinute = this.logsLastMinute;
+      this.logsLastMinute = 0;
+      this.metrics.flushedBuffers = 0; // Reset after reporting
+      this.metrics.rotations = 0; // Reset after reporting
+      console.log('Metrics:', this.metrics);
+    }, 60_000);
   }
 
   async flushAll() {
