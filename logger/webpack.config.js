@@ -10,9 +10,9 @@ module.exports = {
 	target: "node",
 	devtool: "source-map",
 	output: {
-		filename: "abimongo-utils.js",
+		filename: "abimongo-logger.js",
 		path: path.resolve(__dirname, "dist"),
-		library: "abimongo-utils",
+		library: "abimongo-logger",
 		libraryTarget: "umd",
 		umdNamedDefine: true,
 		globalObject: 'this',

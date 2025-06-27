@@ -1,7 +1,7 @@
 {
-  "name": "@abimongo_utils/logger",
+  "name": "abimongo-logger",
   "version": "2.0.0",
-  "main": "./dist/abimongo-utils.js",
+  "main": "./dist/abimongo-logger.js",
   "typings": "./dist/index.d.ts",
   "files": [
     "dist/"
@@ -18,8 +18,8 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/abimongo-utils.js",
-      "require": "./dist/abimongo-utils.js"
+      "import": "./dist/abimongo-logger.js",
+      "require": "./dist/abimongo-logger.js"
     },
     "./package.json": "./package.json"
   },
