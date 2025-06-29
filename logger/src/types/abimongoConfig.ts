@@ -7,7 +7,7 @@ import {
 	Transporter,
 } from "./logger.types";
 import { RemoteTransporter } from '../types';
-import Stream from 'stream';
+
 
 export type AbimongoConfig = {
 	circuitBreaker?: {
@@ -29,5 +29,10 @@ export interface LoggerConfig {
 	enrichMetadata?: (meta: Record<string, any>) => Record<string, any>;
 	shouldLog?: (level: LogLevel, meta?: Record<string, any>) => boolean;
 	circuitBreaker?: AbimongoConfig['circuitBreaker'];
+	enableMetrics?: {
+		enabled?: boolean;
+		interval?: number; // in milliseconds
+		logInterval?: number; // in milliseconds
+	}
 }
 

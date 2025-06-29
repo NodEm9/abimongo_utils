@@ -7,7 +7,7 @@ import { LogLevel } from '../types';
  * @param message - The log message to colorize.
  * @returns A string with the colored log message.
  */
-export function colorByLevel(level: string, message: string): string {
+export function colorByLevel(level: LogLevel, message: string): string {
   switch (level) {
     case 'info': return chalk.blue(message);
     case 'debug': return chalk.gray(message);
@@ -18,21 +18,3 @@ export function colorByLevel(level: string, message: string): string {
     default: return message;
   }
 };
-
-/**
- * Colorizes the log level for console output.
- * @param level - The log level to colorize.
- * @returns A string with the colored log level.
- */
-// export function colorize(level: LogLevel): string {
-//   const colorMap: Record<LogLevel, string> = {
-//     info: chalk.blue('INFO'),
-//     debug: chalk.gray('DEBUG'),
-//     warn: chalk.yellow('WARN'),
-//     error: chalk.red('ERROR'),
-//     fatal: chalk.bgRed.white('FATAL'),
-//     trace: chalk.magenta('TRACE'),
-//   };
-
-//   return colorMap[level] || level.toUpperCase();
-// }

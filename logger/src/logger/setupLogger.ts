@@ -1,7 +1,12 @@
 import { ILogger, LoggerConfig } from '../types';
 import { createLogger } from './loggerFactory';
 
-
+/**
+ * 
+ * @param config Logger configuration object.
+ * @param config.logger Optional logger instance to use.
+ * @returns 
+ */
 export function setupLogger(
   config: LoggerConfig,
 ): ILogger {
@@ -13,7 +18,14 @@ export function setupLogger(
 }
 
 
-
+/**
+ * Logger class that provides a singleton instance of the logger.
+ * It can be initialized with a configuration object.
+ * Usage:
+ * ```typescript
+ * import { Logger } from 'abimongo-logger';
+ * Logger.initialize(YourLoggerConfig);
+ */
 export class Logger {
   private static logger: ILogger;
   static get instance(): ILogger {

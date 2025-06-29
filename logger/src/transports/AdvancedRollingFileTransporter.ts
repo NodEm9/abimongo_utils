@@ -5,6 +5,7 @@ import { promisify } from 'util';
 import { pipeline } from 'stream';
 import { setInterval, clearInterval } from 'timers';
 import { LogLevel } from '../types';
+import { MetricsTracker } from 'utils';
 
 const gzip = promisify(zlib.gzip);
 const streamPipeline = promisify(pipeline);
@@ -24,6 +25,7 @@ export class AdvancedRollingFileTransporter {
   private lastRolledAt: Date;
   private flushTimer?: NodeJS.Timeout;
   private buffer: string[] = [];
+  private metrics = new MetricsTracker();
 
   constructor(private options: RollingFileOptions) {
     this.options.maxSize = this.options.maxSize || 5 * 1024 * 1024;
@@ -69,6 +71,7 @@ export class AdvancedRollingFileTransporter {
       const rotatedFile = `${filePath}.${suffix}`;
 
       fs.renameSync(filePath, rotatedFile);
+      this.metrics.trackRotation();
 
       if (this.options.compress) {
         const compressed = `${rotatedFile}.gz`;
@@ -77,13 +80,15 @@ export class AdvancedRollingFileTransporter {
           zlib.createGzip(),
           fs.createWriteStream(compressed)
         );
+        this.metrics.trackRotation();
         fs.unlinkSync(rotatedFile);
       }
 
       this.cleanupOldLogs();
       this.currentStream = this.createWriteStream();
-      this.lastRolledAt = now;
+      this.lastRolledAt = now;;
       this.currentSize = 0;
+      this.metrics.trackRotation();
     }
   }
 
@@ -121,35 +126,53 @@ export class AdvancedRollingFileTransporter {
   }
 
   public async write(message: string, _level?: LogLevel): Promise<void> {
+    this.metrics.trackLog();
+    console.log('[rotate] happened here') 
     this.buffer.push(message);
-    if (Buffer.byteLength(this.buffer.join('')) >= (this.options.maxSize || 0)) {
-      await this.flush(); // immediate flush to rotate if needed
+
+    // Check if the total size of the buffer exceeds the maxSize limit
+    // This is to ensure we don't exceed the maxSize limit before flushing
+    const totalSize = Buffer.byteLength(this.buffer.join(''));
+    if (totalSize >= (this.options.maxSize || Infinity)) {
+      await this.flush(); // ✅ triggers flush counter
     }
   }
 
- public async flush(): Promise<void> {
-  if (this.buffer.length === 0) return;
+  public async flush(): Promise<void> {
+    if (this.buffer.length === 0) return;
 
-  const raw = this.buffer.join('');
-  this.buffer = [];
+    const raw = this.buffer.join('');
+    this.buffer = [];
 
-  await this.rotateIfNeeded();
+    await this.rotateIfNeeded();
 
-  if (this.options.compress) {
-    try {
-      const compressed = await gzip(Buffer.from(raw + '\n'));
-      this.currentStream.write(compressed);
-      this.currentSize += compressed.length;
-    } catch (err: any) {
-      console.warn('⚠️ Compression failed. Writing uncompressed:', err.message);
+    // this.currentStream.write(raw + '\n');
+    // this.currentSize += Buffer.byteLength(raw + '\n');
+
+    // this.metrics.trackFlush(); // ✅ must be here
+    // console.log('📦[Flushed]: Flushed log entries to stream');
+
+    if (this.options.compress) {
+      try {
+        const compressed = await gzip(Buffer.from(raw + '\n'));
+        this.currentStream.write(compressed);
+        this.currentSize += compressed.length;
+        this.metrics.trackFlush();
+        console.log('📦 Compressed and wrote log entry');
+      } catch (err: any) {
+        this.metrics.trackFlush();
+        console.warn('⚠️ Compression failed. Writing uncompressed:', err.message);
+        this.currentStream.write(raw + '\n');
+        this.currentSize += Buffer.byteLength(raw + '\n');
+        console.log('📦 Wrote log entry without compression');
+      }
+    } else {
       this.currentStream.write(raw + '\n');
       this.currentSize += Buffer.byteLength(raw + '\n');
+      this.metrics.trackFlush();
+      console.log('📦 Wrote log entry without compression');
     }
-  } else {
-    this.currentStream.write(raw + '\n');
-    this.currentSize += Buffer.byteLength(raw + '\n');
   }
-}
 
 
   public close(): void {
@@ -158,3 +181,4 @@ export class AdvancedRollingFileTransporter {
     this.currentStream.end();
   }
 }
+
